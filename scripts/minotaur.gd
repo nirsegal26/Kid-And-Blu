@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	# If Alive, and In Zone, The direction Wiil Be Towards Him
-	if player_chase and Global.player and Global.player.has_method("Level_up"):
+	if player_chase:
 		var direction = (Global.player.position - position).normalized()
 		velocity = direction * SPEED
 		$AnimatedSprite2D.flip_h = Global.player.position.x < position.x
@@ -41,10 +41,11 @@ func _physics_process(delta: float) -> void:
 
 # Player In Zone
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	# If The Player Is Dead, Do Nothing
 	if is_dead:
 		return
-	# Else, Move
+	if body.name != "Player":
+		return # If not Player, Do Nothing
+
 	$ExclamationMark.show()
 	$AnimatedSprite2D.play("Walk")
 	player = body
@@ -52,14 +53,15 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.5).timeout
 	$ExclamationMark.hide()
 
+
 # Player Left the Zone
-func _on_detection_area_body_exited(_body: Node2D) -> void:
-	# If Player Is Dead, Do Nothing
+func _on_detection_area_body_exited(body: Node2D) -> void:
 	if is_dead:
 		return
-	player = null
-	# Else, Dont Chase
-	player_chase = false
+	if body.name == "Player":
+		player = null
+		player_chase = false
+
 
 # For has_method Signal
 func minotaur():
@@ -92,7 +94,6 @@ func deal_with_damage():
 			health = health - 100
 			$take_damage_cooldown.start()
 			can_take_damage = false
-			print("Enemy health = ", health)
 			if health <= 0:
 				die()
 			if $sword_sound.playing:

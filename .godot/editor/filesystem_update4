@@ -1,6 +1,7 @@
 res://scenes/segal.tscn
+res://scripts/minotaur.gd
 res://scenes/blu_battle.tscn
 res://scenes/home.tscn
 res://scenes/player.tscn
+res://node_2d.tscn
 res://scripts/blu_battle.gd
-res://scripts/minotaur.gd
