@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://chq350xewhhiq"]
+
+[ext_resource type="Script" uid="uid://dp38nwac8ixrd" path="res://scripts/music_controller.gd" id="1_nuwea"]
+[ext_resource type="AudioStream" uid="uid://cf35djc7hwbdp" path="res://others/Pokemon Red & Blue Battle! Champion Blue CINEMATIC REMIX (mp3cut.net).mp3" id="2_nuwea"]
+
+[node name="MusicController" type="Node2D"]
+script = ExtResource("1_nuwea")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nuwea")
+autoplay = true
