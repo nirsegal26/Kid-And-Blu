@@ -140,6 +140,7 @@ func _on_armour_pressed() -> void:
 	label8.hide()
 	label7.hide()
 	$Label9.show()
+	$stats.play("def")
 	await type_text($Label9,"ha ha ha! great choice!   ")
 	Global.player_health *= 0.5
 	Global.player_take_damage -= 5
@@ -150,6 +151,7 @@ func _on_sword_pressed() -> void:
 	label8.hide()
 	label7.hide()
 	$Label9.show()
+	$stats.play("attack")
 	await type_text($Label9,"ha ha ha! great choice!   ")
 	Global.player_health *= 0.5
 	Global.player_damage += 7
@@ -160,6 +162,7 @@ func _on_health_pressed() -> void:
 	label8.hide()
 	label7.hide()
 	$Label9.show()
+	$stats.play("health")
 	await type_text($Label9,"ha ha ha! great choice!   ")
 	Global.player_health *= 0.5
 	Global.max_health += 15

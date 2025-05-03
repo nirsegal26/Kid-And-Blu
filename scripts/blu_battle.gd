@@ -1,17 +1,44 @@
 extends Node2D
 
+# קרב ומצלמה
+var in_talking_area := false
 var minotaurs := []
-var camera_move = true
-var enemy_move = true
-@onready var camera_target_position := Vector2(834, 341)  # Battle Position
+var camera_move := true
+var enemy_move := true
+
+@onready var camera_target_position := Vector2(834, 341)
 @onready var wait_duration := 3.0
+@onready var player := get_node_or_null("/root/Node2D/Player")
+@onready var spacebar_anim: AnimationPlayer = $spacebar
+
+# דיאלוג
+var in_dialogue := false
+var dialogue_index := 0
+var is_typing := false
+var typing_speed := 0.04
+var current_typing_label: Label = null
+var current_full_text := ""
+
+var dialogue := [
+	{ "speaker": "kid", "text": "who are you?" },
+	{ "speaker": "blu", "text": "My name is Blu." },
+	{ "speaker": "blu", "text": "I’ve been trapped in this forest" },
+	{ "speaker": "blu", "text": "please, i need your help." },
+	{ "speaker": "kid", "text": "don't worry," },
+	{ "speaker": "kid", "text": "i will get you out of here." },
+	{ "speaker": "kid", "text": "come with me." }
+]
+
+@onready var blu_label := $CanvasLayer/blu_talk
+@onready var kid_label := $CanvasLayer/kid_talk
+@onready var blu_anim := $blu_talk2
+@onready var kid_anim := $kid_talk
 
 func _ready() -> void:
 	$Blu.set_physics_process(false)
 	$Blu.velocity = Vector2.ZERO
-	$Blu.get_node("AnimatedSprite2D").play("Worry") # Play BLU's Worry Anim
+	$Blu.get_node("AnimatedSprite2D").play("Worry")
 
-	# Enemies List
 	minotaurs = [
 		$Minotaur,
 		$Minotaur2,
@@ -20,7 +47,6 @@ func _ready() -> void:
 		$Minotaur5
 	]
 
-	# First Enemies and First Animations
 	for minotaur in minotaurs:
 		if minotaur.has_node("AnimatedSprite2D"):
 			var sprite: AnimatedSprite2D = minotaur.get_node("AnimatedSprite2D")
@@ -29,36 +55,119 @@ func _ready() -> void:
 			await get_tree().create_timer(0.2).timeout
 			sprite.play("Idle")
 
+	# הסתרה בהתחלה
+	blu_label.text = ""
+	kid_label.text = ""
+	blu_label.hide()
+	kid_label.hide()
 
-# Once The Player in Zone, Release the Enemies
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and enemy_move == true:
-		enemy_move = false  # Work Only Once
+	if body.name == "Player" and enemy_move:
+		enemy_move = false
 		for minotaur in minotaurs:
 			minotaur.set_physics_process(true)
 			var sprite = minotaur.get_node("AnimatedSprite2D")
 			if sprite and sprite.animation != "Walk":
 				sprite.play("Walk")
 
-
-
-# Once the Player Enter Watch Zone, The Camera Moves To Battle, Stops and Returns
 func _on_fight_watch_area_body_entered(body: Node2D) -> void:
 	if body.name != "Player":
 		return
-	if camera_move == true:
-		$Player.set_physics_process(false)
-		$Player.get_node("AnimatedSprite2D").play("FrontIdle")
-		var camera: Camera2D = body.get_node_or_null("Camera2D")
-
-		var original_position: Vector2 = camera.global_position
-		var target_position: Vector2 = Vector2(834, 341)  
-
-	# Smooth Movement to Battle
-		create_tween().tween_property(camera, "global_position", target_position, 2.0)
+	if camera_move:
 		camera_move = false
+		player.set_physics_process(false)
+		player.get_node("AnimatedSprite2D").play("FrontIdle")
+
+		var camera: Camera2D = body.get_node_or_null("Camera2D")
+		var original_position: Vector2 = camera.global_position
+		var target_position: Vector2 = camera_target_position
+
+		create_tween().tween_property(camera, "global_position", target_position, 2.0)
 		await get_tree().create_timer(3.0).timeout
-		
-	# Back to Player
+		$AnimationPlayer.play("new_animation")
+		await get_tree().create_timer(2.0).timeout
+
 		create_tween().tween_property(camera, "global_position", original_position, 2.0)
-		$Player.set_physics_process(true)
+		player.set_physics_process(true)
+		await get_tree().create_timer(1.0).timeout
+		$AnimationPlayer.play("fade_away")
+
+func _process(delta: float) -> void:
+	if in_talking_area and Global.player_level == 2 and not in_dialogue:
+		if Input.is_action_just_pressed("interact"):
+			in_dialogue = true
+			dialogue_index = 0
+			spacebar_anim.play("fade")
+			show_next_line()
+	elif in_dialogue:
+		if Input.is_action_just_pressed("interact"):
+			if is_typing:
+				is_typing = false
+				if current_typing_label:
+					current_typing_label.text = current_full_text
+			else:
+				show_next_line()
+
+func show_next_line():
+	if dialogue_index >= dialogue.size():
+		in_dialogue = false
+		dialogue_index = 0
+		blu_anim.play("fade")
+		kid_anim.play("fade")
+		blu_label.hide()
+		kid_label.hide()
+		return
+
+	var line = dialogue[dialogue_index]
+	dialogue_index += 1
+
+	blu_label.hide()
+	kid_label.hide()
+
+	if line["speaker"] == "blu":
+		blu_label.text = ""
+		blu_label.show()
+		current_typing_label = blu_label
+		blu_anim.play("new_animation")
+		kid_anim.play("fade")
+	elif line["speaker"] == "kid":
+		kid_label.text = ""
+		kid_label.show()
+		current_typing_label = kid_label
+		kid_anim.play("new_animation")
+		blu_anim.play("fade")
+
+	current_full_text = line["text"]
+	type_text(current_typing_label, current_full_text)
+
+func type_text(label: Label, full_text: String) -> void:
+	is_typing = true
+	label.text = ""
+	
+	for i in full_text.length():
+		if not is_typing:
+			label.text = full_text
+			break
+		label.text += full_text[i]
+		await get_tree().create_timer(typing_speed).timeout
+
+	is_typing = false
+	current_typing_label = null
+	current_full_text = ""
+
+func _on_blu_talk_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		in_talking_area = true
+		if Global.player_level == 2:
+			spacebar_anim.play("new_animation")
+
+func _on_blu_talk_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		in_talking_area = false
+		if not in_dialogue:
+			spacebar_anim.play("fade")
+			blu_anim.play("fade")
+			kid_anim.play("fade")
+			blu_label.hide()
+			kid_label.hide()

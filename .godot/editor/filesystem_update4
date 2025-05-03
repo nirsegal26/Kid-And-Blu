@@ -1,7 +1,9 @@
+res://scenes/player.tscn
 res://scenes/segal.tscn
-res://scripts/minotaur.gd
 res://scenes/blu_battle.tscn
 res://scenes/home.tscn
-res://scenes/player.tscn
-res://node_2d.tscn
+res://scenes/shop.tscn
+res://scenes/game_over.tscn
+res://scripts/inside_shop.gd
+res://scenes/inside_shop.tscn
 res://scripts/blu_battle.gd

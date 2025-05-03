@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bea3jv5re3eo6"]
+[gd_scene load_steps=30 format=3 uid="uid://bea3jv5re3eo6"]
 
 [ext_resource type="Script" uid="uid://bkc4figs8psub" path="res://scripts/inside_shop.gd" id="1_g1ypb"]
 [ext_resource type="Texture2D" uid="uid://k3mtg48a8c5h" path="res://others/ChatGPT Image Apr 16, 2025, 10_43_36 PM.png" id="1_lajga"]
@@ -166,6 +166,109 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_tarsb"),
 &"arrow": SubResource("Animation_ifek6")
+}
+
+[sub_resource type="Animation" id="Animation_jj3mn"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb7eh"]
+_data = {
+&"attack": SubResource("Animation_jj3mn")
+}
+
+[sub_resource type="Animation" id="Animation_5h1dc"]
+resource_name = "health"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plus_health:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 1.11, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ddx3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plus_health:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plus_def:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plus_attack:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7lqsa"]
+resource_name = "def"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plus_def:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 1.16667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_quelg"]
+resource_name = "attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plus_attack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 1.19, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3okn"]
+_data = {
+&"RESET": SubResource("Animation_ddx3q"),
+&"attack": SubResource("Animation_quelg"),
+&"def": SubResource("Animation_7lqsa"),
+&"health": SubResource("Animation_5h1dc")
 }
 
 [node name="inside_shop" type="Control"]
@@ -508,6 +611,60 @@ texture = ExtResource("7_qe3w3")
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_jj3mn")
+}
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hb7eh")
+}
+
+[node name="plus_health" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 75.0
+offset_top = 129.0
+offset_right = 178.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0, 0.603922, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("2_3b60b")
+theme_override_font_sizes/font_size = 40
+text = "+ + max health
+"
+
+[node name="plus_def" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 76.0
+offset_top = 128.0
+offset_right = 236.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0, 0.603922, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("2_3b60b")
+theme_override_font_sizes/font_size = 40
+text = "+ + defense
+"
+
+[node name="plus_attack" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 75.0
+offset_top = 129.0
+offset_right = 225.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0, 0.603922, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("2_3b60b")
+theme_override_font_sizes/font_size = 40
+text = "+ + attack"
+
+[node name="stats" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o3okn")
 }
 
 [connection signal="pressed" from="yes" to="." method="_on_yes_pressed"]

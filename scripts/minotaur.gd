@@ -44,7 +44,9 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
 	if body.name != "Player":
-		return # If not Player, Do Nothing
+		return # 🚫 אל תעשה כלום אם זה לא שחקן
+
+	print("DETECTED: ", body.name)  # להשאיר ל-Debug אם תרצה
 
 	$ExclamationMark.show()
 	$AnimatedSprite2D.play("Walk")
@@ -94,6 +96,7 @@ func deal_with_damage():
 			health = health - 100
 			$take_damage_cooldown.start()
 			can_take_damage = false
+			print("Enemy health = ", health)
 			if health <= 0:
 				die()
 			if $sword_sound.playing:

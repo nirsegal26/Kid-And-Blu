@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bglmri63tmrvx"]
+[gd_scene load_steps=64 format=4 uid="uid://bglmri63tmrvx"]
 
 [ext_resource type="Script" uid="uid://d1wdpbtiqguoi" path="res://scripts/blu_battle.gd" id="1_5awdj"]
 [ext_resource type="Texture2D" uid="uid://c8fa7n7hy73h5" path="res://art/tilesets/plains.png" id="1_mexla"]
@@ -21,6 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://c1r7qxncu5onm" path="res://scenes/minotaur.tscn" id="20_e6fmh"]
 [ext_resource type="PackedScene" uid="uid://2j30rkwafm6a" path="res://scenes/player.tscn" id="20_q4ovc"]
 [ext_resource type="PackedScene" uid="uid://f5norbpuxfng" path="res://scenes/blu.tscn" id="21_xgc7g"]
+[ext_resource type="FontFile" uid="uid://c13i02yg7oqb3" path="res://others/superstar_memesbruh03.ttf" id="22_xgc7g"]
+[ext_resource type="Texture2D" uid="uid://wt28a0spkdxl" path="res://others/ChatGPT Image Apr 18, 2025, 03_16_16 PM.png" id="23_attng"]
+[ext_resource type="Texture2D" uid="uid://du4kaad1l5y1c" path="res://others/3.png" id="24_v48ux"]
+[ext_resource type="Texture2D" uid="uid://b8sactjof6p3c" path="res://others/ChatGPT Image Apr 12, 2025, 03_48_06 PM.png" id="25_c4acg"]
+[ext_resource type="Texture2D" uid="uid://bflyk2mc70wxh" path="res://others/ChatGPT Image May 3, 2025, 12_40_06 PM.png" id="26_c4acg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5awdj"]
 texture = ExtResource("1_mexla")
@@ -696,6 +701,222 @@ size = Vector2(20, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6fmh"]
 size = Vector2(39, 20)
 
+[sub_resource type="Animation" id="Animation_m4ofw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2fc2m"]
+resource_name = "fade_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y6sft"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_heatd"]
+_data = {
+&"RESET": SubResource("Animation_m4ofw"),
+&"fade_away": SubResource("Animation_2fc2m"),
+&"new_animation": SubResource("Animation_y6sft")
+}
+
+[sub_resource type="Animation" id="Animation_o0vg6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/kid_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k06mo"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/kid_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c4acg"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/kid_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qft5r"]
+_data = {
+&"RESET": SubResource("Animation_o0vg6"),
+&"fade": SubResource("Animation_k06mo"),
+&"new_animation": SubResource("Animation_c4acg")
+}
+
+[sub_resource type="Animation" id="Animation_8fwpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/blu_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_imi7v"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/blu_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qft5r"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/blu_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k06mo"]
+_data = {
+&"RESET": SubResource("Animation_8fwpf"),
+&"fade": SubResource("Animation_imi7v"),
+&"new_animation": SubResource("Animation_qft5r")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xgc7g"]
+radius = 30.0666
+
+[sub_resource type="Animation" id="Animation_attng"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v48ux"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xgc7g"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer2/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4acg"]
+_data = {
+&"RESET": SubResource("Animation_attng"),
+&"fade": SubResource("Animation_v48ux"),
+&"new_animation": SubResource("Animation_xgc7g")
+}
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5awdj")
@@ -729,7 +950,7 @@ position = Vector2(-1, -3)
 tile_set = SubResource("TileSet_oepud")
 
 [node name="Player" parent="." instance=ExtResource("20_q4ovc")]
-position = Vector2(7, 75)
+position = Vector2(691, 394)
 
 [node name="Minotaur" parent="." instance=ExtResource("20_e6fmh")]
 position = Vector2(801, 334)
@@ -761,6 +982,152 @@ shape = SubResource("RectangleShape2D_5awdj")
 position = Vector2(350.5, 283)
 shape = SubResource("RectangleShape2D_e6fmh")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_heatd")
+}
+
+[node name="kid_talk" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qft5r")
+}
+
+[node name="blu_talk2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k06mo")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_xgc7g")
+theme_override_font_sizes/font_size = 32
+text = "someone needs your help!"
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("23_attng")
+
+[node name="kid_talk" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.895
+anchor_right = 0.5
+anchor_bottom = 0.895
+offset_left = -332.0
+offset_top = -38.96
+offset_right = 274.0
+offset_bottom = 1.03998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_xgc7g")
+theme_override_font_sizes/font_size = 40
+text = "kid talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer/kid_talk"]
+z_as_relative = false
+position = Vector2(322, 1.50006)
+scale = Vector2(2.12019, 1.25481)
+texture = ExtResource("24_v48ux")
+
+[node name="ChatGptImageApr12,2025,034806Pm" type="Sprite2D" parent="CanvasLayer/kid_talk"]
+position = Vector2(651.672, 19.4846)
+scale = Vector2(0.212296, 0.163786)
+texture = ExtResource("25_c4acg")
+
+[node name="blu_talk" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.895
+anchor_right = 0.5
+anchor_bottom = 0.895
+offset_left = -366.0
+offset_top = -39.96
+offset_right = 259.0
+offset_bottom = 0.039978
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_xgc7g")
+theme_override_font_sizes/font_size = 40
+text = "blu talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer/blu_talk"]
+z_as_relative = false
+position = Vector2(357, 1.85114)
+scale = Vector2(2.12981, 1.27741)
+texture = ExtResource("24_v48ux")
+
+[node name="ChatGptImageApr12,2025,034806Pm" type="Sprite2D" parent="CanvasLayer/blu_talk"]
+position = Vector2(687, 29)
+scale = Vector2(0.157372, 0.166992)
+texture = ExtResource("26_c4acg")
+
+[node name="blu_talk" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blu_talk"]
+position = Vector2(834, 356)
+shape = SubResource("CircleShape2D_xgc7g")
+
+[node name="spacebar" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c4acg")
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_xgc7g")
+theme_override_font_sizes/font_size = 32
+text = "press spacebar to interact"
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer2/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("23_attng")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="fight_watch_area" to="." method="_on_fight_watch_area_body_entered"]
 [connection signal="body_exited" from="fight_watch_area" to="." method="_on_fight_watch_area_body_exited"]
+[connection signal="body_entered" from="blu_talk" to="." method="_on_blu_talk_body_entered"]
+[connection signal="body_exited" from="blu_talk" to="." method="_on_blu_talk_body_exited"]
