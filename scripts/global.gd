@@ -1,5 +1,6 @@
 extends Node
 
+var last_scene_path: String = ""
 var red_count_coins = 0
 var player_current_attack = false
 var count_coins = 0

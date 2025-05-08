@@ -44,9 +44,9 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
 	if body.name != "Player":
-		return # 🚫 אל תעשה כלום אם זה לא שחקן
+		return # If Not Player, Do Nothing
 
-	print("DETECTED: ", body.name)  # להשאיר ל-Debug אם תרצה
+	print("DETECTED: ", body.name)  # Debugging
 
 	$ExclamationMark.show()
 	$AnimatedSprite2D.play("Walk")

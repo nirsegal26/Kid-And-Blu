@@ -165,7 +165,7 @@ func _on_blu_talk_body_entered(body: Node2D) -> void:
 func _on_blu_talk_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		in_talking_area = false
-		if not in_dialogue:
+		if not in_dialogue and Global.player_level == 2:
 			spacebar_anim.play("fade")
 			blu_anim.play("fade")
 			kid_anim.play("fade")

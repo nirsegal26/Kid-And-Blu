@@ -176,22 +176,6 @@ _data = {
 &"attack": SubResource("Animation_jj3mn")
 }
 
-[sub_resource type="Animation" id="Animation_5h1dc"]
-resource_name = "health"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("plus_health:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.22, 1.11, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ddx3q"]
 length = 0.001
 tracks/0/type = "value"
@@ -231,6 +215,22 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_quelg"]
+resource_name = "attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plus_attack:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 1.19, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_7lqsa"]
 resource_name = "def"
 length = 1.5
@@ -247,17 +247,17 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_quelg"]
-resource_name = "attack"
+[sub_resource type="Animation" id="Animation_5h1dc"]
+resource_name = "health"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("plus_attack:modulate")
+tracks/0/path = NodePath("plus_health:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.21, 1.19, 1.5),
+"times": PackedFloat32Array(0, 0.22, 1.11, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -620,6 +620,7 @@ libraries = {
 
 [node name="plus_health" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 75.0
 offset_top = 129.0
 offset_right = 178.0
@@ -635,6 +636,7 @@ text = "+ + max health
 
 [node name="plus_def" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 76.0
 offset_top = 128.0
 offset_right = 236.0
@@ -650,6 +652,7 @@ text = "+ + defense
 
 [node name="plus_attack" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 75.0
 offset_top = 129.0
 offset_right = 225.0

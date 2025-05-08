@@ -13,7 +13,7 @@ func _ready() -> void:
 	else:
 		$ColorRect.hide()
 		$AnimationPlayer.play("show")
-		$Player.direct = "down"
+		$Player.direct = "up"
 		$Player.position = Vector2(Global.player_exit_cliffside_posx, Global.player_exit_cliffside_posy)
 
 

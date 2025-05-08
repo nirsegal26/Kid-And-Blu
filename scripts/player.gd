@@ -228,6 +228,7 @@ func _on_deal_attack_timer_timeout() -> void:
 
 # After Player Is Dead Function
 func _on_death_timer_timeout() -> void:
+	Global.last_scene_path = get_tree().current_scene.scene_file_path
 	Engine.time_scale = 1 # Stop Slow-Mo
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn") # Reload The Scene
 	Global.player_health = Global.max_health # With 100 Health
