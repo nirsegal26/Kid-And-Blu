@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://f5norbpuxfng"]
 
-[ext_resource type="Script" uid="uid://cpmcvhiwjixoh" path="res://scripts/Blu.gd" id="1_goupk"]
+[ext_resource type="Script" uid="uid://cpmcvhiwjixoh" path="res://scripts/blu.gd" id="1_goupk"]
 [ext_resource type="Texture2D" uid="uid://5x87pm6r28f7" path="res://art/sprites/characters/slime.png" id="2_j56rj"]
 [ext_resource type="Texture2D" uid="uid://x8h4c2wd7dk4" path="res://art/characters/slime.png" id="2_u7gb0"]
 
@@ -327,7 +327,6 @@ position = Vector2(-2.38419e-07, -9)
 scale = Vector2(0.832031, 1.02344)
 sprite_frames = SubResource("SpriteFrames_kn4dt")
 animation = &"Idle"
-frame_progress = 0.619664
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)

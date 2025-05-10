@@ -5,6 +5,7 @@ var in_talking_area := false
 var minotaurs := []
 var camera_move := true
 var enemy_move := true
+var interact = true
 
 @onready var camera_target_position := Vector2(834, 341)
 @onready var wait_duration := 3.0
@@ -38,6 +39,7 @@ func _ready() -> void:
 	$Blu.set_physics_process(false)
 	$Blu.velocity = Vector2.ZERO
 	$Blu.get_node("AnimatedSprite2D").play("Worry")
+	$Player.direct = "right"
 
 	minotaurs = [
 		$Minotaur,
@@ -55,7 +57,6 @@ func _ready() -> void:
 			await get_tree().create_timer(0.2).timeout
 			sprite.play("Idle")
 
-	# הסתרה בהתחלה
 	blu_label.text = ""
 	kid_label.text = ""
 	blu_label.hide()
@@ -117,6 +118,13 @@ func show_next_line():
 		kid_anim.play("fade")
 		blu_label.hide()
 		kid_label.hide()
+
+		# הפעלת Blu מחדש
+		var blu = $Blu
+		blu.set_physics_process(true)
+		blu.velocity = Vector2.ZERO
+		blu.get_node("AnimatedSprite2D").play("Idle") # ודא שיש לך אנימציה בשם הזה
+		$blu_talk.queue_free()
 		return
 
 	var line = dialogue[dialogue_index]
@@ -144,7 +152,7 @@ func show_next_line():
 func type_text(label: Label, full_text: String) -> void:
 	is_typing = true
 	label.text = ""
-	
+
 	for i in full_text.length():
 		if not is_typing:
 			label.text = full_text
@@ -171,3 +179,9 @@ func _on_blu_talk_body_exited(body: Node2D) -> void:
 			kid_anim.play("fade")
 			blu_label.hide()
 			kid_label.hide()
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		$AnimationPlayer.play("attackin")
+		await get_tree().create_timer(2).timeout
+		$AnimationPlayer.play("attackout")
