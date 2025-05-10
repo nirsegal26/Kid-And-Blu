@@ -22,8 +22,10 @@
 ![צילום מסך 2025-04-23 150201](https://github.com/user-attachments/assets/fac36e17-231d-453d-8975-f5d5b72df508)
 ![צילום מסך 2025-04-23 150103](https://github.com/user-attachments/assets/dffb699e-53d2-47c6-ab33-b8c4025f515a)
 ![צילום מסך 2025-04-23 150031](https://github.com/user-attachments/assets/1542f08f-52c7-4cfd-981c-a4bdafd78527)
-![צילום מסך 2025-04-23 145952](https://github.com/user-attachments/assets/98277ad8-c980-4a6a-8d21-f58f2e0f3240)
 ![צילום מסך 2025-04-23 145846](https://github.com/user-attachments/assets/c4a6464c-be34-4f41-8df5-a04a919ac70d)
+![צילום מסך 2025-05-10 165332](https://github.com/user-attachments/assets/10c9fc39-acce-4bcc-be75-8f6c83c65169)
+![צילום מסך 2025-05-10 165519](https://github.com/user-attachments/assets/1d59bfd7-18b8-4d34-9363-d5d1f019dba9)
+
 
 ---
 
