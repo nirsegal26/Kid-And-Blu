@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var is_attacking := false
 
 var SPEED = 50.0
 var player_chase = false # Chase The Player
@@ -14,7 +15,7 @@ var patrol_change_timer := 0.0
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
 	secondary_player = get_node_or_null("../Blu")  
-
+	$AnimatedSprite2D.animation_finished.connect(_on_animation_finished)
 	var main_player = get_node_or_null("/root/Node2D/Player")  
 	if main_player and not main_player.player_died.is_connected(_on_main_player_died):
 		main_player.player_died.connect(_on_main_player_died) 
@@ -75,6 +76,7 @@ func _on_minotaue_hitbox_body_entered(body: Node2D) -> void:
 		return
 	# If The Body is Player, Attack
 	if body.has_method("player"):
+		is_attacking = true
 		$AnimatedSprite2D.play("Attack")
 		player_inattack_zone= true
 
@@ -82,9 +84,11 @@ func _on_minotaue_hitbox_body_entered(body: Node2D) -> void:
 func _on_minotaue_hitbox_body_exited(body: Node2D) -> void:
 	if is_dead:
 		return
-	$AnimatedSprite2D.play("Walk")
 	if body.has_method("player"):
-		player_inattack_zone= false
+		player_inattack_zone = false
+		if not is_attacking:
+			$AnimatedSprite2D.play("Walk")
+
 
 # Self Damage Function
 func deal_with_damage():
@@ -144,3 +148,12 @@ func patrol_behavior(delta: float) -> void:
 	velocity = patrol_direction * SPEED * 0.5  # Slower Than Chase
 	$AnimatedSprite2D.play("Walk")
 	$AnimatedSprite2D.flip_h = velocity.x < 0
+
+
+func _on_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "Attack":
+		is_attacking = false
+		if player_inattack_zone:
+			$AnimatedSprite2D.play("Walk")
+		else:
+			$AnimatedSprite2D.play("Walk")

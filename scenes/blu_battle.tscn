@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://bglmri63tmrvx"]
+[gd_scene load_steps=71 format=4 uid="uid://bglmri63tmrvx"]
 
 [ext_resource type="Script" uid="uid://d1wdpbtiqguoi" path="res://scripts/blu_battle.gd" id="1_5awdj"]
 [ext_resource type="Texture2D" uid="uid://c8fa7n7hy73h5" path="res://art/tilesets/plains.png" id="1_mexla"]
@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bflyk2mc70wxh" path="res://others/ChatGPT Image May 3, 2025, 12_40_06 PM.png" id="26_c4acg"]
 [ext_resource type="PackedScene" uid="uid://cjw8uxrdg7hnb" path="res://scenes/pause_menu.tscn" id="27_o0vg6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5awdj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0vg6"]
 texture = ExtResource("1_mexla")
 0:0/0 = 0
 1:0/0 = 0
@@ -91,7 +91,7 @@ texture = ExtResource("1_mexla")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, -8, 2.5, -5.375, 3.76724, -3.55017, 5.625, -0.875, 5.625, 3.375, 3.625, 6.5, -8, 6.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6fmh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qft5r"]
 texture = ExtResource("2_5awdj")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.29961, 5.98462, -5.35466, -4.7247, 5.82714, -5.82714, 5.98462, 5.98462)
@@ -226,7 +226,7 @@ texture = ExtResource("2_5awdj")
 4:12/0 = 0
 5:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgc7g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fwpf"]
 texture = ExtResource("3_e6fmh")
 0:0/0 = 0
 1:0/0 = 0
@@ -241,11 +241,11 @@ texture = ExtResource("3_e6fmh")
 4:1/0 = 0
 5:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_attng"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k06mo"]
 texture = ExtResource("4_xgc7g")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v48ux"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imi7v"]
 texture = ExtResource("5_attng")
 0:0/0 = 0
 1:0/0 = 0
@@ -326,7 +326,7 @@ texture = ExtResource("5_attng")
 26:2/0 = 0
 27:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4acg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn5nl"]
 texture = ExtResource("6_v48ux")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2.04737, -8, 1.88988, -8, 8, 8, 8)
@@ -391,17 +391,17 @@ texture = ExtResource("6_v48ux")
 5:5/0 = 0
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.944941, -8, -8, -8, -8, 8, -0.62996, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0vg6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yvdr"]
 texture = ExtResource("7_c4acg")
 0:0/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qft5r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6m62"]
 texture = ExtResource("8_o0vg6")
 0:0/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fwpf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhugc"]
 texture = ExtResource("9_qft5r")
 0:0/0 = 0
 0:0/0/y_sort_origin = 1
@@ -436,7 +436,7 @@ texture = ExtResource("9_qft5r")
 10:7/0/y_sort_origin = 6
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.5, 10, 2, 10.25, -6.25, 10.25, -11.25, 6.5, -12, 1, -12.5, -2, -8, -3, -3.5, -1, 8, -1.25, 11, 0.75, 11.75, 3)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k06mo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdqs0"]
 texture = ExtResource("10_8fwpf")
 0:0/0 = 0
 1:0/0 = 0
@@ -483,11 +483,11 @@ texture = ExtResource("10_8fwpf")
 2:7/0 = 0
 3:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imi7v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syelf"]
 texture = ExtResource("11_k06mo")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rn5nl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qbdj"]
 texture = ExtResource("12_imi7v")
 0:0/0 = 0
 1:0/0 = 0
@@ -503,7 +503,7 @@ texture = ExtResource("12_imi7v")
 1:2/0 = 0
 2:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yvdr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4ovc"]
 texture = ExtResource("13_rn5nl")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.5, -3, 8, -2.875, 8, 8, -4.625, 8)
@@ -531,7 +531,7 @@ texture = ExtResource("13_rn5nl")
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.44715, -8, 3.44715, 5.92202, -8, 5.89293)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6m62"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrqvw"]
 texture = ExtResource("14_5yvdr")
 0:0/0 = 0
 1:0/0 = 0
@@ -554,7 +554,7 @@ texture = ExtResource("14_5yvdr")
 2:4/0 = 0
 3:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhugc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vci17"]
 texture = ExtResource("15_a6m62")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5.19717, 8, 0.314981, 8, -3.93725, 8, -3.93725, -6.29961, 5.19717, -5.51216)
@@ -589,7 +589,7 @@ texture = ExtResource("15_a6m62")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.63368, 6.14229, -6.63368, 6.01945, 6.1423, -8, 6.26514)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdqs0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i3nf"]
 texture = ExtResource("16_dhugc")
 0:0/0 = 0
 1:0/0 = 0
@@ -667,7 +667,7 @@ texture = ExtResource("16_dhugc")
 2:11/0 = 0
 3:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syelf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wiq7r"]
 texture = ExtResource("17_tdqs0")
 0:0/0 = 0
 1:0/0 = 0
@@ -678,23 +678,23 @@ texture = ExtResource("17_tdqs0")
 
 [sub_resource type="TileSet" id="TileSet_oepud"]
 physics_layer_0/collision_layer = 3
-sources/3 = SubResource("TileSetAtlasSource_imi7v")
-sources/16 = SubResource("TileSetAtlasSource_8fwpf")
-sources/0 = SubResource("TileSetAtlasSource_5awdj")
-sources/5 = SubResource("TileSetAtlasSource_5yvdr")
-sources/6 = SubResource("TileSetAtlasSource_a6m62")
-sources/7 = SubResource("TileSetAtlasSource_dhugc")
-sources/8 = SubResource("TileSetAtlasSource_tdqs0")
-sources/9 = SubResource("TileSetAtlasSource_syelf")
-sources/10 = SubResource("TileSetAtlasSource_xgc7g")
-sources/12 = SubResource("TileSetAtlasSource_v48ux")
-sources/1 = SubResource("TileSetAtlasSource_e6fmh")
-sources/2 = SubResource("TileSetAtlasSource_k06mo")
-sources/4 = SubResource("TileSetAtlasSource_rn5nl")
-sources/11 = SubResource("TileSetAtlasSource_attng")
-sources/13 = SubResource("TileSetAtlasSource_c4acg")
-sources/14 = SubResource("TileSetAtlasSource_o0vg6")
-sources/15 = SubResource("TileSetAtlasSource_qft5r")
+sources/3 = SubResource("TileSetAtlasSource_syelf")
+sources/16 = SubResource("TileSetAtlasSource_dhugc")
+sources/0 = SubResource("TileSetAtlasSource_o0vg6")
+sources/5 = SubResource("TileSetAtlasSource_q4ovc")
+sources/6 = SubResource("TileSetAtlasSource_mrqvw")
+sources/7 = SubResource("TileSetAtlasSource_vci17")
+sources/8 = SubResource("TileSetAtlasSource_0i3nf")
+sources/9 = SubResource("TileSetAtlasSource_wiq7r")
+sources/10 = SubResource("TileSetAtlasSource_8fwpf")
+sources/12 = SubResource("TileSetAtlasSource_imi7v")
+sources/1 = SubResource("TileSetAtlasSource_qft5r")
+sources/2 = SubResource("TileSetAtlasSource_tdqs0")
+sources/4 = SubResource("TileSetAtlasSource_5qbdj")
+sources/11 = SubResource("TileSetAtlasSource_k06mo")
+sources/13 = SubResource("TileSetAtlasSource_rn5nl")
+sources/14 = SubResource("TileSetAtlasSource_5yvdr")
+sources/15 = SubResource("TileSetAtlasSource_a6m62")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awdj"]
 size = Vector2(20, 35)
@@ -723,6 +723,18 @@ tracks/1/path = NodePath("CanvasLayer4/Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer5/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -774,6 +786,36 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_a6m62"]
+resource_name = "hero_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer5/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dhugc"]
+resource_name = "hero_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer5/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_y6sft"]
 resource_name = "new_animation"
 tracks/0/type = "value"
@@ -795,6 +837,8 @@ _data = {
 &"attackin": SubResource("Animation_rn5nl"),
 &"attackout": SubResource("Animation_5yvdr"),
 &"fade_away": SubResource("Animation_2fc2m"),
+&"hero_in": SubResource("Animation_a6m62"),
+&"hero_out": SubResource("Animation_dhugc"),
 &"new_animation": SubResource("Animation_y6sft")
 }
 
@@ -965,6 +1009,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6m62"]
 size = Vector2(92, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vg6"]
+size = Vector2(88, 65)
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5awdj")
@@ -999,7 +1046,7 @@ tile_map_data = PackedByteArray("AAASABMAAQAIAAEAAAAHAA0ABgAAAAQAAAALAA0ABgABAAQ
 tile_set = SubResource("TileSet_oepud")
 
 [node name="Player" parent="." instance=ExtResource("20_q4ovc")]
-position = Vector2(699, 397)
+position = Vector2(5, 75)
 
 [node name="Minotaur" parent="." instance=ExtResource("20_e6fmh")]
 position = Vector2(801, 334)
@@ -1217,9 +1264,45 @@ texture = ExtResource("23_attng")
 position = Vector2(517, 387)
 shape = SubResource("RectangleShape2D_a6m62")
 
+[node name="advance_scene" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="advance_scene"]
+position = Vector2(1197, 388.5)
+shape = SubResource("RectangleShape2D_o0vg6")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer5"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_xgc7g")
+theme_override_font_sizes/font_size = 32
+text = "there's no hero in you?"
+horizontal_alignment = 1
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer5/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("23_attng")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="fight_watch_area" to="." method="_on_fight_watch_area_body_entered"]
 [connection signal="body_exited" from="fight_watch_area" to="." method="_on_fight_watch_area_body_exited"]
 [connection signal="body_entered" from="blu_talk" to="." method="_on_blu_talk_body_entered"]
 [connection signal="body_exited" from="blu_talk" to="." method="_on_blu_talk_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="advance_scene" to="." method="_on_advance_scene_body_entered"]
+[connection signal="body_exited" from="advance_scene" to="." method="_on_advance_scene_body_exited"]

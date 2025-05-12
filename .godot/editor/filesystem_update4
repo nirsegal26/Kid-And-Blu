@@ -1,8 +1,12 @@
 res://scenes/segal.tscn
-res://scripts/blu_battle.gd
 res://scenes/blu_battle.tscn
 res://scenes/home.tscn
 res://scenes/player.tscn
 res://scenes/home_inside.tscn
 res://scenes/world.tscn
 res://scenes/blu.tscn
+res://scenes/2.tscn
+res://scenes/silver_chest.tscn
+res://scenes/golden_chest.tscn
+res://scenes/music_controller.tscn
+res://scenes/minotaur.tscn

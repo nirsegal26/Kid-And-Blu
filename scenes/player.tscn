@@ -885,10 +885,10 @@ flip_v = true
 [node name="Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 2
-offset_left = -65.0
-offset_top = -54.0
-offset_right = 73.0
-offset_bottom = -22.0
+offset_left = 86.0
+offset_top = 41.0
+offset_right = 224.0
+offset_bottom = 73.0
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("8_ur7pv")
@@ -911,7 +911,7 @@ stream = ExtResource("10_y4r1p")
 
 [node name="level_up" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_3v2ag")
-volume_db = 3.8
+volume_db = 2.5
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

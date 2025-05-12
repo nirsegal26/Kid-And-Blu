@@ -25,3 +25,4 @@ func _process(delta):
 		$AnimationPlayer.play("heart")
 		Global.player_health += 60
 		open = true
+		$detection_area.queue_free()

@@ -1,5 +1,5 @@
 extends Node2D
-
+var hero = false
 # קרב ומצלמה
 var in_talking_area := false
 var minotaurs := []
@@ -109,6 +109,7 @@ func _process(delta: float) -> void:
 					current_typing_label.text = current_full_text
 			else:
 				show_next_line()
+	change_scenes()
 
 func show_next_line():
 	if dialogue_index >= dialogue.size():
@@ -125,6 +126,7 @@ func show_next_line():
 		blu.velocity = Vector2.ZERO
 		blu.get_node("AnimatedSprite2D").play("Idle") # ודא שיש לך אנימציה בשם הזה
 		$blu_talk.queue_free()
+		hero = true
 		return
 
 	var line = dialogue[dialogue_index]
@@ -185,3 +187,21 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 		$AnimationPlayer.play("attackin")
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("attackout")
+
+
+func _on_advance_scene_body_entered(body: Node2D) -> void:
+	if body.has_method("player") and hero == true:
+		Global.transition_scene = true
+	elif body.has_method("player") and hero == false:
+		$AnimationPlayer.play("hero_in")
+
+
+func change_scenes():
+	if  Global.transition_scene == true:
+			get_tree().change_scene_to_file("res://scenes/2.tscn")
+			Global.finish_changescene()
+
+
+func _on_advance_scene_body_exited(body: Node2D) -> void:
+	if body.has_method("player"):
+		$AnimationPlayer.play("hero_out")

@@ -232,6 +232,7 @@ position = Vector2(0, -16)
 scale = Vector2(1.19881, 1.15458)
 sprite_frames = SubResource("SpriteFrames_u5yya")
 animation = &"Attack"
+autoplay = "Attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
@@ -266,6 +267,7 @@ position = Vector2(0, -24)
 scale = Vector2(0.0421876, 0.0230469)
 texture = ExtResource("4_o8fdv")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]

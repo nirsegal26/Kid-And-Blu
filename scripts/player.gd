@@ -325,15 +325,9 @@ func Level_up():
 		Global.player_health += 5
 		Global.player_take_damage -= 1
 		Global.xp = 0
-		Global.max_xp += 7
+		Global.max_xp += 2
 		Global.player_damage += 2
-	print("health:", health)
-	print("global.health:", Global.player_health)
-	print("take_damage", damage)
-	print("global.take_damage", Global.player_take_damage)
-	print("max_health", max_health)
-	print("global.max_health", Global.max_health)
-	print("global.damage", Global.player_damage)
+
 	
 
 # Reset After Main Menu

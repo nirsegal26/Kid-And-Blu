@@ -1,7 +1,9 @@
+AudioStreamPlayer
 CollisionShape2D
 Area2D
+StaticBody2D
+Node2D
+Node
 AnimationPlayer
 AnimatedSprite2D
 Label
-Node2D
-Node
