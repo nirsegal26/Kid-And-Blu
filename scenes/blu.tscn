@@ -326,7 +326,7 @@ y_sort_enabled = true
 position = Vector2(-2.38419e-07, -9)
 scale = Vector2(0.832031, 1.02344)
 sprite_frames = SubResource("SpriteFrames_kn4dt")
-animation = &"Idle"
+animation = &"Right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)

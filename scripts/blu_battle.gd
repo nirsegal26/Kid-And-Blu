@@ -23,11 +23,11 @@ var current_full_text := ""
 var dialogue := [
 	{ "speaker": "kid", "text": "who are you?" },
 	{ "speaker": "blu", "text": "My name is Blu." },
-	{ "speaker": "blu", "text": "I’ve been trapped in this forest" },
-	{ "speaker": "blu", "text": "please, i need your help." },
-	{ "speaker": "kid", "text": "don't worry," },
-	{ "speaker": "kid", "text": "i will get you out of here." },
-	{ "speaker": "kid", "text": "come with me." }
+	{ "speaker": "blu", "text": "They Got me.." },
+	{ "speaker": "blu", "text": "those evil skeletons.." },
+	{ "speaker": "kid", "text": "this evil.." },
+	{ "speaker": "kid", "text": "i need to purge this forest," },
+	{ "speaker": "kid", "text": "follow me." }
 ]
 
 @onready var blu_label := $CanvasLayer/blu_talk
@@ -94,7 +94,7 @@ func _on_fight_watch_area_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(1.0).timeout
 		$AnimationPlayer.play("fade_away")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if in_talking_area and Global.player_level == 2 and not in_dialogue:
 		if Input.is_action_just_pressed("interact"):
 			in_dialogue = true
@@ -123,8 +123,8 @@ func show_next_line():
 		# הפעלת Blu מחדש
 		var blu = $Blu
 		blu.set_physics_process(true)
+		blu.get_node("AnimatedSprite2D").play("Idle") 
 		blu.velocity = Vector2.ZERO
-		blu.get_node("AnimatedSprite2D").play("Idle") # ודא שיש לך אנימציה בשם הזה
 		$blu_talk.queue_free()
 		hero = true
 		return

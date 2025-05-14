@@ -6,7 +6,7 @@ res://scenes/home_inside.tscn
 res://scenes/world.tscn
 res://scenes/blu.tscn
 res://scenes/2.tscn
-res://scenes/silver_chest.tscn
-res://scenes/golden_chest.tscn
-res://scenes/music_controller.tscn
-res://scenes/minotaur.tscn
+res://scenes/3.tscn
+res://scenes/4.tscn
+res://scenes/5.tscn
+res://scripts/blu_battle.gd

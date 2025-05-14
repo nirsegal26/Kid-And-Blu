@@ -40,25 +40,39 @@ func _ready() -> void:
 	$AnimatedSprite2D5.stop()
 
 func _physics_process(delta: float) -> void:
+	# If Dead
+	if Global.player_health <= 0 and player_alive:
+		print("Player died") # Debug
+		player_alive = false
+		can_move = false
+		attack_ip = false # <–– עצור תקיפה מיידית
+		Global.player_current_attack = false
+		$deal_attack_timer.stop() # <–– עצור את הטיימר
+
+	# עצור כל האנימציות האחרות
+		$AnimatedSprite2D2.stop()
+		$AnimatedSprite2D3.stop()
+		$AnimatedSprite2D4.stop()
+		$AnimatedSprite2D5.stop()
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("Death")
+
+		emit_signal("player_died")
+		$death_timer.start()
+		Engine.time_scale = 0.5
+		set_physics_process(false)
+		return
+
+
+
 	player_movement(delta)
-	enemy_attack()
 	attack()
 	update_health()
 	update_xp()
 
-	# If Dead
-	if Global.player_health <= 0:
-		player_alive = false
-		velocity = Vector2.ZERO  # Prevent Movement After Death
-		Engine.time_scale = 0.5 # Play Slow Motion
-		$AnimatedSprite2D.play("Death")
-		set_physics_process(false) # Stop Physics
-		emit_signal("player_died")
-		$death_timer.start()
-
 # Player Movement Function
 func player_movement(_delta):
-	var blu = get_node_or_null("../Blu") # Get Blu
+	var blu = get_node_or_null("res://scenes/blu.tscn") # Get Blu
 	if blu and blu.has_method("set_run_speed"):
 		blu.set_run_speed(RUN_SPEED + 2000 if is_running else 90) # Set the Speed Of Blu To Running
 
@@ -136,7 +150,7 @@ func spawn_dust():
 
 # Animation Function (By Direction)
 func play_animation(movement: int, is_running: bool):
-	if attack_ip:  # Dont Change Animation While Attacking
+	if attack_ip or not player_alive:  # Dont Change Animation While Attacking
 		return
 	var anim = $AnimatedSprite2D
 	match direct:
@@ -182,25 +196,24 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 		enemy_inattack_range = false
 
 # Enemy is Attacking
-func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown == true:
-		Global.player_health = Global.player_health - Global.player_take_damage
-		enemy_attack_cooldown = false
-		if $sword_sound.playing:
-				$sword_sound.stop()
-		$sword_sound.play()
-		$attack_cooldown.start()
-		print(health)
+func take_hit_feedback():
+	$AnimatedSprite2D.modulate = Color.RED
+	await get_tree().create_timer(0.2).timeout
+	$AnimatedSprite2D.modulate = Color.WHITE
 
 # Attack Cooldown
 func _on_attack_cooldown_timeout() -> void:
-	enemy_attack_cooldown = true
+	if player_alive:
+		enemy_attack_cooldown = true
 
 # Attack Function
 func attack():
+	if not player_alive:
+		return
 	var dir = direct
 	if Input.is_action_just_pressed("attack"):
 		can_move = false
+		await get_tree().create_timer(0.07).timeout
 		Global.player_current_attack = true
 		attack_ip = true
 		if dir == "right":
@@ -221,6 +234,8 @@ func attack():
 			$sword_swing.play()
 # Attack Finished Function
 func _on_deal_attack_timer_timeout() -> void:
+	if not player_alive:
+		return
 	$deal_attack_timer.stop()
 	can_move = true # Can Move Again
 	Global.player_current_attack= false
@@ -282,13 +297,6 @@ func update_healthbar_color(delta):
 # Count Coins Function
 func add_coin():
 	Global.xp += 1
-	print("health:", health)
-	print("global.health:", Global.player_health)
-	print("take_damage", damage)
-	print("global.take_damage", Global.player_take_damage)
-	print("max_health", max_health)
-	print("global.max_health", Global.max_health)
-	print("global.damage", Global.player_damage)
 	update_coin_ui()
 	Level_up()
 
@@ -296,13 +304,7 @@ func add_coin():
 # Count Red Coins Function
 func red_add_coin():
 	Global.xp += 5
-	print("health:", health)
-	print("global.health:", Global.player_health)
-	print("take_damage", damage)
-	print("global.take_damage", Global.player_take_damage)
-	print("max_health", max_health)
-	print("global.max_health", Global.max_health)
-	print("global.damage", Global.player_damage)
+
 	
 	update_coin_ui()
 	Level_up()
@@ -321,11 +323,11 @@ func Level_up():
 		$level_up.play()
 		Global.player_level += 1
 		$CanvasLayer/level_label.text = str("LV." , Global.player_level)
-		Global.max_health += 5
+		Global.max_health += 2
 		Global.player_health += 5
 		Global.player_take_damage -= 1
 		Global.xp = 0
-		Global.max_xp += 2
+		Global.max_xp += 5
 		Global.player_damage += 2
 
 	

@@ -232,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kv3tn")
 }],
-"loop": true,
+"loop": false,
 "name": &"BackAttack",
 "speed": 5.0
 }, {
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qx4v2")
 }],
-"loop": true,
+"loop": false,
 "name": &"FrontAttack",
 "speed": 5.0
 }, {
@@ -418,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4015p")
 }],
-"loop": true,
+"loop": false,
 "name": &"SideAttack",
 "speed": 7.0
 }, {
@@ -671,16 +671,18 @@ script = ExtResource("1_ofpl0")
 y_sort_enabled = true
 position = Vector2(-1, -18)
 sprite_frames = SubResource("SpriteFrames_6yo83")
-animation = &"SideIdle"
+animation = &"BackAttack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_3dmwt")
 
 [node name="player_hitbox" type="Area2D" parent="."]
+scale = Vector2(1, 0.88)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(0, -8)
+scale = Vector2(0.84, 0.84727)
 shape = SubResource("CircleShape2D_shi5g")
 
 [node name="attack_cooldown" type="Timer" parent="."]
@@ -885,10 +887,10 @@ flip_v = true
 [node name="Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 2
-offset_left = 86.0
-offset_top = 41.0
-offset_right = 224.0
-offset_bottom = 73.0
+offset_left = -65.0
+offset_top = -54.0
+offset_right = 73.0
+offset_bottom = -22.0
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("8_ur7pv")

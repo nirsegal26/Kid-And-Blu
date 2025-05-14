@@ -122,9 +122,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ou0qr")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -245,7 +245,9 @@ modulate = Color(1, 0.06, 0.06, 0.913725)
 position = Vector2(1, -23)
 scale = Vector2(1.52604, 1.625)
 sprite_frames = SubResource("SpriteFrames_8ltsx")
-animation = &"Idle"
+animation = &"Attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -261,10 +263,12 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_c0m37")
 
 [node name="minotaue_hitbox" type="Area2D" parent="."]
+position = Vector2(4, 3)
+scale = Vector2(1.32, 1.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minotaue_hitbox"]
 position = Vector2(0, -8)
-scale = Vector2(1.64, 1.08)
+scale = Vector2(2.15515, 1.52444)
 shape = SubResource("CircleShape2D_6rera")
 
 [node name="take_damage_cooldown" type="Timer" parent="."]
@@ -293,8 +297,13 @@ position = Vector2(0, -34)
 scale = Vector2(0.0421876, 0.0230469)
 texture = ExtResource("4_bnirc")
 
+[node name="hit_player" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="attack_player"]
