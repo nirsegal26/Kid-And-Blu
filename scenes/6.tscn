@@ -714,11 +714,6 @@ modulate = Color(0, 0, 0, 0.486275)
 position = Vector2(739, 285)
 collision_mask = 4
 
-[node name="Minotaur46" parent="." instance=ExtResource("15_fv37u")]
-modulate = Color(0, 0, 0, 0.486275)
-position = Vector2(799, 317)
-collision_mask = 4
-
 [node name="Minotaur3" parent="." instance=ExtResource("15_fv37u")]
 modulate = Color(0, 0, 0, 0.486275)
 position = Vector2(544, 324)
