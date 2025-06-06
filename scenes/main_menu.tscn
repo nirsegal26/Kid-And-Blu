@@ -1,0 +1,230 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvpbo8wpivh1f"]
+
+[ext_resource type="FontFile" uid="uid://c5h1fe07ymuyx" path="res://others/superstarorig_memesbruh03.ttf" id="1_0sjpe"]
+[ext_resource type="Script" uid="uid://dhw2h7gdr58la" path="res://scripts/main_menu.gd" id="1_e7fx1"]
+[ext_resource type="Texture2D" uid="uid://dkwsn1phfa4q5" path="res://others/ChatGPT Image Mar 27, 2025, 09_38_46 PM.png" id="2_g1dty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q627q"]
+bg_color = Color(0.121569, 0.0627451, 0, 0.490196)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.392157, 0.164706, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0rbg"]
+bg_color = Color(0.121569, 0.0627451, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.392157, 0.164706, 0, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GridContainer/Button3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GridContainer/Button4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GridContainer/Button5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GridContainer/Button3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GridContainer/Button4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GridContainer/Button5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
+_data = {
+&"RESET": SubResource("Animation_wu84c"),
+&"show": SubResource("Animation_bqqt6")
+}
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7fx1")
+
+[node name="Panel2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g1dty")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -50.0
+offset_right = 264.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="Button3" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_pressed_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_fonts/font = ExtResource("1_0sjpe")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0rbg")
+text = "play"
+
+[node name="Button4" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_pressed_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_fonts/font = ExtResource("1_0sjpe")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0rbg")
+text = "how to play"
+
+[node name="Button5" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_colors/font_pressed_color = Color(0.862745, 0.764706, 0.529412, 1)
+theme_override_fonts/font = ExtResource("1_0sjpe")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q627q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0rbg")
+text = "quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8ln24")
+}
+
+[connection signal="pressed" from="GridContainer/Button3" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="GridContainer/Button4" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="GridContainer/Button5" to="." method="_on_quit_pressed"]

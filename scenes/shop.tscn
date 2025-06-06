@@ -1,0 +1,170 @@
+[gd_scene load_steps=15 format=3 uid="uid://d1uqmvwmpk8ih"]
+
+[ext_resource type="Script" uid="uid://dcby1q3s0hxwa" path="res://scenes/shop.gd" id="1_2fc2m"]
+[ext_resource type="Texture2D" uid="uid://csdyvsco6sgoa" path="res://art/sprites/characters/GeneralShopPack/shop1.png" id="1_xfvoa"]
+[ext_resource type="Texture2D" uid="uid://c0d1lxxludxqa" path="res://art/sprites/characters/GeneralShopPack/shop2.png" id="2_1l46r"]
+[ext_resource type="FontFile" uid="uid://clmr0r2ohpx88" path="res://others/superstar_memesbruh03.ttf" id="4_8r1wq"]
+[ext_resource type="Texture2D" uid="uid://bi5vxoajjrwmf" path="res://others/ChatGPT Image Apr 18, 2025, 03_16_16 PM.png" id="5_ajxib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_032fp"]
+atlas = ExtResource("1_xfvoa")
+region = Rect2(0, 0, 128, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fc2m"]
+atlas = ExtResource("2_1l46r")
+region = Rect2(0, 0, 128, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8r1wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_032fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fc2m")
+}],
+"loop": true,
+"name": &"Shop",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajxib"]
+size = Vector2(74.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6sft"]
+size = Vector2(42.0955, 20.8689)
+
+[sub_resource type="Animation" id="Animation_m4ofw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/Label/ChatGptImageApr18,2025,031616Pm:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2fc2m"]
+resource_name = "fade_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y6sft"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer2/Label/ChatGptImageApr18,2025,031616Pm:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_heatd"]
+_data = {
+&"RESET": SubResource("Animation_m4ofw"),
+&"fade_away": SubResource("Animation_2fc2m"),
+&"new_animation": SubResource("Animation_y6sft")
+}
+
+[node name="Shop" type="CharacterBody2D"]
+script = ExtResource("1_2fc2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16.832, 0.00708485)
+scale = Vector2(1.3255, 1.50024)
+sprite_frames = SubResource("SpriteFrames_8r1wq")
+animation = &"Shop"
+autoplay = "Shop"
+frame_progress = 0.189118
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-3.75, 10)
+shape = SubResource("RectangleShape2D_ajxib")
+
+[node name="shopping_area" type="Area2D" parent="."]
+position = Vector2(40, -23)
+scale = Vector2(2.01922, 2.30013)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shopping_area"]
+position = Vector2(-21.543, 27.3895)
+shape = SubResource("RectangleShape2D_y6sft")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_heatd")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8r1wq")
+theme_override_font_sizes/font_size = 32
+text = "press spacebar to interact"
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("5_ajxib")
+
+[connection signal="body_entered" from="shopping_area" to="." method="_on_shopping_area_body_entered"]
+[connection signal="body_exited" from="shopping_area" to="." method="_on_shopping_area_body_exited"]
