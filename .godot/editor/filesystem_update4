@@ -5,7 +5,6 @@ res://scenes/golden_chest.gdshader
 res://scenes/6.gdshader
 res://scenes/7.gdshader
 res://scenes/home_inside.gdshader
-res://scripts/music_controller.gd
 res://scenes/skeleton.tscn
 res://scenes/home.tscn
 res://scenes/blu_battle.tscn
@@ -16,3 +15,7 @@ res://scenes/4.tscn
 res://scenes/5.tscn
 res://scenes/6.tscn
 res://scenes/7.tscn
+res://scenes/prince.tscn
+res://scenes/player.tscn
+res://scenes/king.tscn
+res://scripts/king.gd

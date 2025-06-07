@@ -699,6 +699,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("13_3axax")]
 position = Vector2(7, 322)
+collision_layer = 7
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = 99

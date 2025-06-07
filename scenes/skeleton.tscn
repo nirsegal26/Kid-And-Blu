@@ -268,7 +268,7 @@ scale = Vector2(1.32, 1.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minotaue_hitbox"]
 position = Vector2(0, -8)
-scale = Vector2(2.15515, 1.52444)
+scale = Vector2(2.00364, 1.52444)
 shape = SubResource("CircleShape2D_6rera")
 
 [node name="take_damage_cooldown" type="Timer" parent="."]
@@ -308,5 +308,5 @@ stream = ExtResource("5_5pgwy")
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
-[connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
 [connection signal="timeout" from="hit_player" to="." method="attack_player"]
+[connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]

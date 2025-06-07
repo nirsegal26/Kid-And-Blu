@@ -674,7 +674,7 @@ script = ExtResource("1_ofpl0")
 y_sort_enabled = true
 position = Vector2(-1, -18)
 sprite_frames = SubResource("SpriteFrames_6yo83")
-animation = &"BackAttack"
+animation = &"SideAttack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

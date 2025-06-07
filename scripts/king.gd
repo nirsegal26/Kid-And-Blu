@@ -4,7 +4,7 @@ var is_attacking := false  # Flag to prevent multiple attack overlaps
 var SPEED = 50.0  # Movement speed
 var player_chase = false  # Should enemy chase player?
 var player : Node2D = null  # Reference to the player
-var health = 100  # Enemy health
+var health = 500  # Enemy health
 var player_inattack_zone = false  # Is player within attack zone?
 var can_take_damage = true  # Damage cooldown flag
 var is_dead = false  # Is enemy dead?
@@ -164,7 +164,7 @@ func update_health():
 	if fill_style == null:
 		fill_style = StyleBoxFlat.new()
 		healthbar.add_theme_stylebox_override("fill", fill_style)
-	fill_style.bg_color = Color(0.2, 0.8, 0.2)  # Green bar color
+	fill_style.bg_color = Color(0.0, 0.0, 0)  # Black bar color
 
 # Patrol logic when not chasing player
 func patrol_behavior(delta: float) -> void:
