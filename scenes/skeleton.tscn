@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://bxkyqtk1ccauj"]
 
+[ext_resource type="Script" uid="uid://dfn6vomwinqyf" path="res://scripts/skeleton.gd" id="1_5pgwy"]
 [ext_resource type="Texture2D" uid="uid://dnedn13ucl4wv" path="res://art/sprites/characters/skeleton.png" id="1_fc143"]
-[ext_resource type="Script" uid="uid://dfn6vomwinqyf" path="res://scripts/skeleton.gd" id="1_xe6ky"]
 [ext_resource type="AudioStream" uid="uid://cptylcj60ialv" path="res://others/sword_hit (mp3cut.net).mp3" id="3_ivqcw"]
 [ext_resource type="Texture2D" uid="uid://cusqty42e5fdu" path="res://others/exclamation_mark.png" id="4_bnirc"]
 [ext_resource type="AudioStream" uid="uid://nsuvgg4le0oe" path="res://music/Best Sword Sounds (SliceSlashCrashSwooshetc) (mp3cut (mp3cut.net).mp3" id="5_5pgwy"]
@@ -239,7 +239,7 @@ corner_radius_bottom_left = 7
 
 [node name="Skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_xe6ky")
+script = ExtResource("1_5pgwy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.746585, 2.00946e-06, 8.66354e-07, 1)
@@ -247,13 +247,14 @@ position = Vector2(-1.90624, -21.5)
 scale = Vector2(1.74609, 1.72917)
 sprite_frames = SubResource("SpriteFrames_8ltsx")
 animation = &"Walk"
-frame_progress = 0.304951
+frame_progress = 0.712429
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_e8tn4")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+visible = false
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
@@ -263,6 +264,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_c0m37")
 
 [node name="minotaue_hitbox" type="Area2D" parent="."]
+visible = false
 position = Vector2(4, 3)
 scale = Vector2(1.32, 1.8)
 
@@ -308,5 +310,5 @@ stream = ExtResource("5_5pgwy")
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
-[connection signal="timeout" from="hit_player" to="." method="attack_player"]
 [connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="attack_player"]

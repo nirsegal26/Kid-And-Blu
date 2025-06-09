@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var is_attacking := false  # Flag to prevent multiple attack overlaps
-var SPEED = 50.0  # Movement speed
+var SPEED = 40.0  # Movement speed
 var player_chase = false  # Should enemy chase player?
 var player : Node2D = null  # Reference to the player
 var health = 100  # Enemy health

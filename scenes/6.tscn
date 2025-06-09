@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://chmq8ljjun3n4"]
+[gd_scene load_steps=44 format=4 uid="uid://chmq8ljjun3n4"]
 
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_66yv7"]
 [ext_resource type="Script" uid="uid://cy4ednpbsfrse" path="res://scripts/6.gd" id="1_wnes2"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bi5vxoajjrwmf" path="res://others/ChatGPT Image Apr 18, 2025, 03_16_16 PM.png" id="20_oitmr"]
 [ext_resource type="Shader" uid="uid://b0nee5d55woeg" path="res://scenes/6.gdshader" id="21_m2ljp"]
 [ext_resource type="PackedScene" uid="uid://cjw8uxrdg7hnb" path="res://scenes/pause_menu.tscn" id="22_oitmr"]
-[ext_resource type="PackedScene" uid="uid://euawwxyg7uwl" path="res://scenes/prince.tscn" id="23_um11a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_oitmr"]
 
@@ -705,11 +704,6 @@ position = Vector2(3, 331)
 modulate = Color(0.907942, 0.907942, 0.907942, 1)
 position = Vector2(11, 316)
 collision_layer = 7
-
-[node name="Prince" parent="." instance=ExtResource("23_um11a")]
-y_sort_enabled = false
-position = Vector2(335, 328)
-collision_mask = 4
 
 [node name="Minotaur" parent="." instance=ExtResource("15_fv37u")]
 modulate = Color(0, 0, 0, 0.486275)

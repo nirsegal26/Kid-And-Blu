@@ -297,5 +297,5 @@ stream = ExtResource("5_5pgwy")
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
-[connection signal="timeout" from="hit_player" to="." method="attack_player"]
 [connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="attack_player"]

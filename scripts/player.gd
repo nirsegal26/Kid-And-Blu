@@ -70,6 +70,10 @@ func _physics_process(delta: float) -> void:
 	update_health()
 	update_xp()
 
+
+func is_attacking() -> bool:
+	return Global.player_current_attack
+
 # Player Movement Function
 func player_movement(_delta):
 	var blu = get_node_or_null("res://scenes/blu.tscn") # Get Blu

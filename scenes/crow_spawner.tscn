@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0rlq8mbyl2os"]
+
+[ext_resource type="Script" uid="uid://bxwspe37ellvp" path="res://scripts/crow_spawner.gd" id="1_lwkqe"]
+
+[node name="CrowSpawner" type="Node2D"]
+script = ExtResource("1_lwkqe")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://rtdf0egrcy5k"]
+[gd_scene load_steps=63 format=4 uid="uid://rtdf0egrcy5k"]
 
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_2aofv"]
 [ext_resource type="Script" uid="uid://deuwyyqbpurxj" path="res://scenes/home.gd" id="1_e42qu"]
@@ -27,6 +27,8 @@
 [ext_resource type="Shader" uid="uid://dqeibwomabjwt" path="res://scenes/world.gdshader" id="23_jdxxw"]
 [ext_resource type="Shader" uid="uid://pte0egmic3aj" path="res://scenes/home.gdshader" id="25_qmde4"]
 [ext_resource type="Texture2D" uid="uid://d2nuk014aknu" path="res://objects.png" id="26_wa7t7"]
+[ext_resource type="PackedScene" uid="uid://c0rlq8mbyl2os" path="res://scenes/crow_spawner.tscn" id="28_vysw7"]
+[ext_resource type="PackedScene" uid="uid://bwd4eiyyqip6x" path="res://scenes/king.tscn" id="29_miq5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc6b6"]
 texture = ExtResource("1_2aofv")
@@ -1031,6 +1033,11 @@ scale = Vector2(0.89345, 1.00174)
 texture = ExtResource("26_wa7t7")
 region_enabled = true
 region_rect = Rect2(0, 0, 29, 42.8461)
+
+[node name="CrowSpawner" parent="." instance=ExtResource("28_vysw7")]
+
+[node name="King" parent="." instance=ExtResource("29_miq5y")]
+position = Vector2(583, 364)
 
 [connection signal="body_entered" from="opendoorarea" to="." method="_on_opendoorarea_body_entered"]
 [connection signal="body_exited" from="opendoorarea" to="." method="_on_opendoorarea_body_exited"]

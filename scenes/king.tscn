@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://bwd4eiyyqip6x"]
+[gd_scene load_steps=39 format=3 uid="uid://bwd4eiyyqip6x"]
 
 [ext_resource type="Script" uid="uid://cfgl5wytilhb4" path="res://scripts/king.gd" id="1_o8jf3"]
 [ext_resource type="Texture2D" uid="uid://bhv4ovoyneaoc" path="res://art/sprites/characters/תמונה4.png" id="2_y26ih"]
 [ext_resource type="AudioStream" uid="uid://cptylcj60ialv" path="res://others/sword_hit (mp3cut.net).mp3" id="3_ivqcw"]
 [ext_resource type="Texture2D" uid="uid://cusqty42e5fdu" path="res://others/exclamation_mark.png" id="4_bnirc"]
 [ext_resource type="AudioStream" uid="uid://nsuvgg4le0oe" path="res://music/Best Sword Sounds (SliceSlashCrashSwooshetc) (mp3cut (mp3cut.net).mp3" id="5_5pgwy"]
+[ext_resource type="Texture2D" uid="uid://dfx7kw8r3vrnw" path="res://others/UI_BossBar.png" id="6_y26ih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6iuwv"]
 atlas = ExtResource("2_y26ih")
@@ -225,34 +226,50 @@ radius = 170.003
 [sub_resource type="CircleShape2D" id="CircleShape2D_6rera"]
 radius = 9.94884
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txkty"]
-bg_color = Color(0.556863, 0.937255, 0.592157, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iuwv"]
+bg_color = Color(0, 0, 0, 0.407843)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[node name="Skeleton" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y26ih"]
+bg_color = Color(0.580392, 0.168627, 0.203922, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="King" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_o8jf3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -56)
-scale = Vector2(1.06879, 1.04557)
+modulate = Color(0.13418, 0.144997, 0.220888, 1)
+texture_filter = 6
+position = Vector2(7.4867, -31.0983)
+scale = Vector2(0.533905, 0.538671)
 sprite_frames = SubResource("SpriteFrames_8ltsx")
 animation = &"Attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_e8tn4")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+visible = false
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
@@ -262,6 +279,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_c0m37")
 
 [node name="minotaue_hitbox" type="Area2D" parent="."]
+visible = false
 position = Vector2(4, 3)
 scale = Vector2(1.32, 1.8)
 
@@ -272,15 +290,6 @@ shape = SubResource("CircleShape2D_6rera")
 
 [node name="take_damage_cooldown" type="Timer" parent="."]
 wait_time = 0.5
-
-[node name="ProgressBar2" type="ProgressBar" parent="."]
-offset_left = -21.0
-offset_top = 5.0
-offset_right = 529.0
-offset_bottom = 125.0
-scale = Vector2(0.1, 0.1)
-theme_override_styles/fill = SubResource("StyleBoxFlat_txkty")
-show_percentage = false
 
 [node name="death_timer" type="Timer" parent="."]
 wait_time = 2.097
@@ -303,10 +312,29 @@ wait_time = 0.2
 [node name="player_hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5pgwy")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 613.0
+offset_top = 871.0
+offset_right = 1354.0
+offset_bottom = 897.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6iuwv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y26ih")
+show_percentage = false
+
+[node name="ChatGptImageJun8,2025,065808Pm" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(982.877, 881)
+scale = Vector2(1.63613, 1.26154)
+texture = ExtResource("6_y26ih")
+region_enabled = true
+region_rect = Rect2(0, 0, 516, 65.5)
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
-[connection signal="timeout" from="hit_player" to="." method="attack_player"]
 [connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="attack_player"]

@@ -4,13 +4,13 @@ var is_attacking := false  # Flag to prevent multiple attack overlaps
 var SPEED = 50.0  # Movement speed
 var player_chase = false  # Should enemy chase player?
 var player : Node2D = null  # Reference to the player
-var health = 500  # Enemy health
+var health = 100  # Enemy health
 var player_inattack_zone = false  # Is player within attack zone?
 var can_take_damage = true  # Damage cooldown flag
 var is_dead = false  # Is enemy dead?
 var patrol_direction := Vector2(1, 0)  # Initial patrol direction
 var patrol_change_timer := 0.0  # Timer for switching patrol direction
-
+var energy_ball_scene: PackedScene = preload("res://scenes/energy_ball.tscn")
 @onready var attack_timer: Timer = $hit_player  # Timer to regulate attack rate
 
 func _ready() -> void:
@@ -24,6 +24,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	deal_with_damage()
 	update_health()
+	if player and not player_inattack_zone and not is_attacking:
+		var distance = global_position.distance_to(player.global_position)
+		if distance > 150:
+			shoot_energy_ball()
 
 	if is_dead:
 		velocity = Vector2.ZERO
@@ -38,6 +42,22 @@ func _physics_process(delta: float) -> void:
 		patrol_behavior(delta)
 
 	move_and_slide()
+func shoot_energy_ball():
+	if is_dead or is_attacking or player == null:
+		return
+
+	is_attacking = true
+	$AnimatedSprite2D.play("Shooting")
+	await get_tree().create_timer(0.3).timeout
+
+	var ball = energy_ball_scene.instantiate()
+	get_parent().add_child(ball)
+	ball.global_position = global_position
+	# אין צורך בשורת direction
+
+	await get_tree().create_timer(1.0).timeout
+	is_attacking = false
+
 
 # Triggered when player enters detection zone
 func _on_detection_area_body_entered(body: Node2D) -> void:
@@ -139,7 +159,7 @@ func die():
 		return
 	is_dead = true
 	$AnimatedSprite2D.play("Death")
-	$ProgressBar2.hide()
+	$CanvasLayer/ProgressBar2.hide()
 	velocity = Vector2.ZERO
 	set_physics_process(false)  # Stop all logic
 	$CollisionShape2D.set_deferred("disabled", true)  # Disable collisions
@@ -158,13 +178,17 @@ func _on_take_damage_cooldown_timeout() -> void:
 
 # Update the enemy's health bar
 func update_health():
-	var healthbar = $ProgressBar2
+	var healthbar = $CanvasLayer/ProgressBar2
 	healthbar.value = health
-	var fill_style: StyleBoxFlat = healthbar.get_theme_stylebox("fill", "ProgressBar") as StyleBoxFlat
-	if fill_style == null:
-		fill_style = StyleBoxFlat.new()
-		healthbar.add_theme_stylebox_override("fill", fill_style)
-	fill_style.bg_color = Color(0.0, 0.0, 0)  # Black bar color
+
+	var percent := float(health) / float(healthbar.max_value)
+	var fill_color := Color("2ecc71")  # ירוק
+
+	if percent < 0.6:
+		fill_color = Color("f39c12")  # כתום
+	if percent < 0.3:
+		fill_color = Color("e74c3c")  # אדום
+
 
 # Patrol logic when not chasing player
 func patrol_behavior(delta: float) -> void:

@@ -722,4 +722,7 @@ offset_top = -462.0
 offset_right = 688.0
 offset_bottom = 317.0
 
+[node name="Skeleton3" parent="." instance=ExtResource("15_4ap0d")]
+position = Vector2(150, 523)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
