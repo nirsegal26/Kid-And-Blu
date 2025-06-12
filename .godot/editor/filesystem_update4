@@ -1,4 +1,4 @@
-res://scenes/king.tscn
+res://scenes/home.tscn
 res://scenes/world.gdshader
 res://scenes/home.gdshader
 res://scenes/golden_chest.gdshader
@@ -6,7 +6,6 @@ res://scenes/6.gdshader
 res://scenes/7.gdshader
 res://scenes/home_inside.gdshader
 res://scripts/energy_ball.gdshader
-res://scenes/home.tscn
 res://scenes/blu_battle.tscn
 res://scenes/2.tscn
 res://scenes/world.tscn
@@ -15,7 +14,7 @@ res://scenes/4.tscn
 res://scenes/5.tscn
 res://scenes/6.tscn
 res://scenes/7.tscn
+res://scenes/king.tscn
 res://scenes/energy_ball.tscn
 res://scenes/player.tscn
 res://scripts/king.gd
-res://scripts/prince.gd

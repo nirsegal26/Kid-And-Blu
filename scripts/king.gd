@@ -10,7 +10,6 @@ var can_take_damage = true  # Damage cooldown flag
 var is_dead = false  # Is enemy dead?
 var patrol_direction := Vector2(1, 0)  # Initial patrol direction
 var patrol_change_timer := 0.0  # Timer for switching patrol direction
-var energy_ball_scene: PackedScene = preload("res://scenes/energy_ball.tscn")
 @onready var attack_timer: Timer = $hit_player  # Timer to regulate attack rate
 
 func _ready() -> void:
@@ -26,8 +25,6 @@ func _physics_process(delta: float) -> void:
 	update_health()
 	if player and not player_inattack_zone and not is_attacking:
 		var distance = global_position.distance_to(player.global_position)
-		if distance > 150:
-			shoot_energy_ball()
 
 	if is_dead:
 		velocity = Vector2.ZERO
@@ -42,21 +39,6 @@ func _physics_process(delta: float) -> void:
 		patrol_behavior(delta)
 
 	move_and_slide()
-func shoot_energy_ball():
-	if is_dead or is_attacking or player == null:
-		return
-
-	is_attacking = true
-	$AnimatedSprite2D.play("Shooting")
-	await get_tree().create_timer(0.3).timeout
-
-	var ball = energy_ball_scene.instantiate()
-	get_parent().add_child(ball)
-	ball.global_position = global_position
-	# אין צורך בשורת direction
-
-	await get_tree().create_timer(1.0).timeout
-	is_attacking = false
 
 
 # Triggered when player enters detection zone
@@ -166,11 +148,7 @@ func die():
 	player_chase = false
 	player_inattack_zone = false
 
-	# Player rewards
-	Global.red_count_coins += 1
-	player.Level_up()
-	player.update_coin_ui()
-	player.red_add_coin()
+
 
 # Called when damage cooldown ends
 func _on_take_damage_cooldown_timeout() -> void:
