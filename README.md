@@ -19,14 +19,16 @@
 
 ## 📷 Screenshots
 
-![צילום מסך 2025-04-23 150201](https://github.com/user-attachments/assets/fac36e17-231d-453d-8975-f5d5b72df508)
-![צילום מסך 2025-04-23 150103](https://github.com/user-attachments/assets/dffb699e-53d2-47c6-ab33-b8c4025f515a)
-![צילום מסך 2025-04-23 150031](https://github.com/user-attachments/assets/1542f08f-52c7-4cfd-981c-a4bdafd78527)
-![צילום מסך 2025-04-23 145846](https://github.com/user-attachments/assets/c4a6464c-be34-4f41-8df5-a04a919ac70d)
-![צילום מסך 2025-05-10 165332](https://github.com/user-attachments/assets/10c9fc39-acce-4bcc-be75-8f6c83c65169)
-![צילום מסך 2025-05-10 165519](https://github.com/user-attachments/assets/1d59bfd7-18b8-4d34-9363-d5d1f019dba9)
-![צילום מסך 2025-05-21 120026](https://github.com/user-attachments/assets/de22e976-421a-49ce-9b57-bf658f4ad961)
-![צילום מסך 2025-05-21 115225](https://github.com/user-attachments/assets/20716f3b-f117-4907-9b6a-ce840864869a)
+![Level Up](https://github.com/user-attachments/assets/ffe30391-232b-48e0-8f3f-41d128559c04)
+![Health Box](https://github.com/user-attachments/assets/d3307974-cc37-4a29-b373-92d952feada1)
+![General Image](https://github.com/user-attachments/assets/b9890549-0061-47d6-b19a-09290d975060)
+![Dying](https://github.com/user-attachments/assets/eaea9f2d-64e9-44d3-8df6-25a3fa74f53c)
+![Battle](https://github.com/user-attachments/assets/e0122fb3-2d5d-4c67-9d07-0052e0debedd)
+![Battle ;-)](https://github.com/user-attachments/assets/42f2ce11-8846-488f-a5b3-9eea31b3a4ac)
+![צילום מסך 2025-04-23 150201](https://github.com/user-attachments/assets/23aece9b-3ac4-4258-a312-caa6d4a0fbec)
+![צילום מסך 2025-04-23 150031](https://github.com/user-attachments/assets/323d5804-00ce-48bc-9338-2a231b8576d2)
+![צילום מסך 2025-04-23 145846](https://github.com/user-attachments/assets/f2f3f70e-bd76-413f-be44-95fd28809bd2)
+
 
 
 ---
