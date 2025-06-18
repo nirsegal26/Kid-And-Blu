@@ -41,11 +41,6 @@ func _physics_process(delta):
 	if target.has_method("is_attacking") and target.is_attacking():
 		if distance <= attack_range + 5.0:
 			die()
-	crow_sound()
-
-func crow_sound():
-	await get_tree().create_timer(30).timeout
-	$AudioStreamPlayer2.play()
 
 
 func update_fly_animation(dir: Vector2) -> void:
@@ -77,7 +72,7 @@ func attack_and_reset() -> void:
 		return
 
 	if is_instance_valid(target) and global_position.distance_to(target.global_position) <= attack_range + 10:
-		Global.player_health -= 15
+		Global.player_health -= 10
 		Global.player.update_health()
 
 	await get_tree().create_timer(attack_cooldown).timeout

@@ -57,20 +57,20 @@ void vertex(){
 vec2 AdjustUvToNewSize(vec2 originalUV, float texturePixelSizeX, vec2 numberFrames, float frameX) {
 	// relation between the previous size and the new one
 	float relation = (1.0 + 2.0 * texturePixelSizeX * float(displacementPixels) * numberFrames.x);
-	
+
 	vec2 uv = originalUV;
-	
+
 	uv.x *= relation;
-	
+
 	// adapt new position to new uv
 	//uv.x -= float(displacementPixels) * texturePixelSizeX;
-	
+
 	// displaces the pixels depending on the sprite column
 	//uv.x -= float(displacementPixels) * frameX * numberFrames.x * texturePixelSizeX / 2.0;
-	
+
 	// optimized operation
 	uv.x -= float(displacementPixels) * texturePixelSizeX * (1.0 + frameX * numberFrames.x / 2.0);
-	
+
 	return uv;
 }
 

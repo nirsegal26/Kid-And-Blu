@@ -239,6 +239,7 @@ position = Vector2(1, -4)
 shape = SubResource("CircleShape2D_7eegi")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+visible = false
 scale = Vector2(1.4109, 1.26024)
 collision_layer = 2
 collision_mask = 2
@@ -248,6 +249,7 @@ position = Vector2(-1, -17)
 shape = SubResource("CircleShape2D_gdlq0")
 
 [node name="minotaue_hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minotaue_hitbox"]
 position = Vector2(-1, -9)
@@ -279,5 +281,5 @@ stream = ExtResource("5_pvx2w")
 [connection signal="body_entered" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_entered"]
 [connection signal="body_exited" from="minotaue_hitbox" to="." method="_on_minotaue_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
-[connection signal="timeout" from="hit_player" to="." method="attack_player"]
 [connection signal="timeout" from="hit_player" to="." method="_on_hit_player_timeout"]
+[connection signal="timeout" from="hit_player" to="." method="attack_player"]

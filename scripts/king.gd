@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var is_attacking := false  # Flag to prevent multiple attack overlaps
-var SPEED = 50.0  # Movement speed
+var SPEED = 40.0  # Movement speed
 var player_chase = false  # Should enemy chase player?
 var player : Node2D = null  # Reference to the player
 var health = 100  # Enemy health
@@ -14,7 +14,6 @@ var patrol_change_timer := 0.0  # Timer for switching patrol direction
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("Idle")
-	$ExclamationMark.hide()
 	
 	# Ensure attack_timer is connected once
 	if not attack_timer.timeout.is_connected(_on_hit_player_timeout):
@@ -45,12 +44,10 @@ func _physics_process(delta: float) -> void:
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
-	$ExclamationMark.show()
 	$AnimatedSprite2D.play("Walk")
 	player = body
 	player_chase = true
 	await get_tree().create_timer(0.5).timeout
-	$ExclamationMark.hide()
 
 # Triggered when player exits detection zone
 func _on_detection_area_body_exited(_body: Node2D) -> void:
@@ -101,7 +98,7 @@ func _on_hit_player_timeout() -> void:
 
 	# Deal damage to player
 	if Global.player_health > 0:
-		Global.player_health -= (Global.player_take_damage + 10)
+		Global.player_health -= (16.67)
 
 		if Global.player and Global.player.has_method("update_health"):
 			Global.player.update_health()
@@ -123,7 +120,7 @@ func deal_with_damage():
 		return
 	if player_inattack_zone and Global.player_current_attack == true:
 		if can_take_damage:
-			health -= Global.player_damage
+			health -= 10
 			$take_damage_cooldown.start()
 			can_take_damage = false
 			print("Enemy health = ", health)

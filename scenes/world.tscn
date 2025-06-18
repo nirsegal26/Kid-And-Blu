@@ -746,7 +746,7 @@ offset_right = 1.0
 offset_bottom = 5.0
 
 [node name="Blu" parent="." instance=ExtResource("5_qq2av")]
-position = Vector2(7, 78)
+position = Vector2(3, 75)
 up_direction = Vector2(-0.141001, -0.990009)
 
 [node name="Player" parent="." instance=ExtResource("5_i3kbt")]
@@ -784,7 +784,7 @@ position = Vector2(798, 393)
 [node name="StaticBody2D" type="StaticBody2D" parent="MapBounds"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBounds/StaticBody2D"]
-position = Vector2(-11.5, 321.5)
+position = Vector2(-15, 320)
 shape = SubResource("RectangleShape2D_7t5mc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBounds/StaticBody2D"]

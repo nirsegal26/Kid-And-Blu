@@ -277,10 +277,10 @@ shape = SubResource("CircleShape2D_6rera")
 wait_time = 0.5
 
 [node name="ProgressBar2" type="ProgressBar" parent="."]
-offset_left = -8.0
-offset_top = 4.0
-offset_right = 182.0
-offset_bottom = 44.0
+offset_left = -12.0
+offset_top = 6.0
+offset_right = 178.0
+offset_bottom = 46.0
 scale = Vector2(0.1, 0.1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_txkty")
 show_percentage = false

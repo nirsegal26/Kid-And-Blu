@@ -1,5 +1,6 @@
-[gd_scene load_steps=50 format=4 uid="uid://cuheb3byktb0b"]
+[gd_scene load_steps=52 format=4 uid="uid://cuheb3byktb0b"]
 
+[ext_resource type="Script" uid="uid://cp6f6j64sny4q" path="res://scripts/7.gd" id="1_7ipw2"]
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_8kmwq"]
 [ext_resource type="Texture2D" uid="uid://ck6ryddwjqbp0" path="res://art/sprites/objects/objects.png" id="2_e3g2c"]
 [ext_resource type="Texture2D" uid="uid://bxt4i133b3x4x" path="res://art/sprites/tilesets/water_decorations.png" id="3_272l0"]
@@ -22,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cjw8uxrdg7hnb" path="res://scenes/pause_menu.tscn" id="20_xv43n"]
 [ext_resource type="AudioStream" uid="uid://c1vqn6doe6pbw" path="res://music/Rain Sound Effect Short - Rain in Nature (mp3cut.net) (1).mp3" id="21_jthu4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78ecv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jthu4"]
 texture = ExtResource("1_8kmwq")
 0:0/0 = 0
 1:0/0 = 0
@@ -84,7 +85,7 @@ texture = ExtResource("1_8kmwq")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, -8, 2.5, -5.375, 3.76724, -3.55017, 5.625, -0.875, 5.625, 3.375, 3.625, 6.5, -8, 6.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnkhe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ipw2"]
 texture = ExtResource("2_e3g2c")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.25, -8, 8, -8, 8, 8, -5.375, 8)
@@ -200,7 +201,7 @@ texture = ExtResource("2_e3g2c")
 4:12/0 = 0
 5:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g83t0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exqye"]
 texture = ExtResource("3_272l0")
 0:0/0 = 0
 1:0/0 = 0
@@ -215,7 +216,7 @@ texture = ExtResource("3_272l0")
 4:1/0 = 0
 5:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxsj6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oubvs"]
 texture = ExtResource("4_r5nbk")
 0:0/animation_columns = 6
 0:0/animation_separation = Vector2i(4, 0)
@@ -352,7 +353,7 @@ texture = ExtResource("4_r5nbk")
 21:1/0 = 0
 26:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1v3aa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3axax"]
 texture = ExtResource("5_7y2dg")
 0:0/0 = 0
 0:0/0/y_sort_origin = 1
@@ -387,11 +388,11 @@ texture = ExtResource("5_7y2dg")
 10:7/0/y_sort_origin = 3
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.5, 10, 2, 10.25, -6.25, 10.25, -11.25, 6.5, -12, 1, -12.5, -2, -8, -3, -3.5, -1, 8, -1.25, 11, 0.75, 11.75, 3)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1att"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78ecv"]
 texture = ExtResource("6_6l3nu")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8q1c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnkhe"]
 texture = ExtResource("7_di5te")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.5, -3, 8, -2.875, 8, 8, -4.625, 8)
@@ -419,7 +420,7 @@ texture = ExtResource("7_di5te")
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.44715, -8, 3.44715, 5.92202, -8, 5.89293)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xwcw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g83t0"]
 texture = ExtResource("8_xv43n")
 0:0/0 = 0
 1:0/0 = 0
@@ -442,7 +443,7 @@ texture = ExtResource("8_xv43n")
 2:4/0 = 0
 3:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u02ec"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxsj6"]
 texture = ExtResource("9_jthu4")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.77703, -5.57562, 4.49647, -5.03604, 4.13675, 8, -2.87774, 8)
@@ -472,7 +473,7 @@ texture = ExtResource("9_jthu4")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.13675, -5.39576, 4.13675, 5.03605, -2.51802, 4.85619, -8, 3.41732, -8, -2.1583, -3.06264, -4.87603)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmw3r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1v3aa"]
 texture = ExtResource("10_7ipw2")
 0:0/0 = 0
 1:0/0 = 0
@@ -556,7 +557,7 @@ texture = ExtResource("10_7ipw2")
 2:11/0 = 0
 3:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pc4ro"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1att"]
 texture = ExtResource("11_exqye")
 0:0/0 = 0
 1:0/0 = 0
@@ -567,21 +568,21 @@ texture = ExtResource("11_exqye")
 
 [sub_resource type="TileSet" id="TileSet_ylf64"]
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_h1att")
-sources/16 = SubResource("TileSetAtlasSource_1v3aa")
-sources/0 = SubResource("TileSetAtlasSource_78ecv")
-sources/5 = SubResource("TileSetAtlasSource_w8q1c")
-sources/6 = SubResource("TileSetAtlasSource_8xwcw")
-sources/7 = SubResource("TileSetAtlasSource_u02ec")
-sources/8 = SubResource("TileSetAtlasSource_gmw3r")
-sources/9 = SubResource("TileSetAtlasSource_pc4ro")
-sources/10 = SubResource("TileSetAtlasSource_g83t0")
-sources/12 = SubResource("TileSetAtlasSource_pxsj6")
-sources/1 = SubResource("TileSetAtlasSource_bnkhe")
+sources/3 = SubResource("TileSetAtlasSource_78ecv")
+sources/16 = SubResource("TileSetAtlasSource_3axax")
+sources/0 = SubResource("TileSetAtlasSource_jthu4")
+sources/5 = SubResource("TileSetAtlasSource_bnkhe")
+sources/6 = SubResource("TileSetAtlasSource_g83t0")
+sources/7 = SubResource("TileSetAtlasSource_pxsj6")
+sources/8 = SubResource("TileSetAtlasSource_1v3aa")
+sources/9 = SubResource("TileSetAtlasSource_h1att")
+sources/10 = SubResource("TileSetAtlasSource_exqye")
+sources/12 = SubResource("TileSetAtlasSource_oubvs")
+sources/1 = SubResource("TileSetAtlasSource_7ipw2")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4nqco"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m2ljp"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w8q1c"]
 width = 1152
 height = 648
 generate_mipmaps = false
@@ -590,7 +591,7 @@ noise = SubResource("FastNoiseLite_4nqco")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbva6"]
 shader = ExtResource("12_oubvs")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_m2ljp")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_w8q1c")
 shader_parameter/density = 0.4
 shader_parameter/speed = Vector2(0.02, 0.01)
 
@@ -598,14 +599,14 @@ shader_parameter/speed = Vector2(0.02, 0.01)
 _data = [Vector2(0, 0.539326), 0.0, 2.25892, 0, 0, Vector2(0.492647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.516854), -1.4754, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_tocx6"]
+[sub_resource type="CurveTexture" id="CurveTexture_8xwcw"]
 curve = SubResource("Curve_ft587")
 
 [sub_resource type="Gradient" id="Gradient_swpde"]
 offsets = PackedFloat32Array(0, 0.190909, 0.218182)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0784314, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_atvbq"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u02ec"]
 gradient = SubResource("Gradient_swpde")
 
 [sub_resource type="Curve" id="Curve_3x3mf"]
@@ -623,7 +624,7 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ijsg1"]
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_gmw3r"]
 curve_x = SubResource("Curve_3x3mf")
 curve_y = SubResource("Curve_4tncc")
 curve_z = SubResource("Curve_2t2qp")
@@ -634,9 +635,9 @@ emission_shape = 3
 emission_box_extents = Vector3(700, 1, 1)
 gravity = Vector3(0, 1500, 0)
 scale_min = 0.2
-scale_over_velocity_curve = SubResource("CurveXYZTexture_ijsg1")
-color_initial_ramp = SubResource("GradientTexture1D_atvbq")
-alpha_curve = SubResource("CurveTexture_tocx6")
+scale_over_velocity_curve = SubResource("CurveXYZTexture_gmw3r")
+color_initial_ramp = SubResource("GradientTexture1D_u02ec")
+alpha_curve = SubResource("CurveTexture_8xwcw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xv43n"]
 shader = ExtResource("16_6l3nu")
@@ -654,9 +655,13 @@ size = Vector2(26.5, 319.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di5te"]
 size = Vector2(1168, 97)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exqye"]
+size = Vector2(20, 25)
+
 [node name="7" type="Node2D"]
 modulate = Color(0.683077, 0.683077, 0.683077, 1)
 y_sort_enabled = true
+script = ExtResource("1_7ipw2")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -697,7 +702,7 @@ offset_bottom = 648.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("13_3axax")]
-position = Vector2(7, 322)
+position = Vector2(8, 325)
 collision_layer = 7
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -1001,3 +1006,11 @@ offset_bottom = -66.0
 stream = ExtResource("21_jthu4")
 volume_db = 19.0
 autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1177, 318.5)
+shape = SubResource("RectangleShape2D_exqye")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
