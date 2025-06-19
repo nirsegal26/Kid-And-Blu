@@ -1,28 +1,40 @@
 extends Node
 
+@export var spawn_interval := 5.0
+@export var initial_delay := 7.0  # כמה זמן לחכות לפני הפעלת ה-Spawner
+
 var crow_scene: PackedScene = preload("res://scenes/energy_ball.tscn")
-@export var spawn_interval := 5.0  # כל כמה שניות נוצרת ציפור
 
 var corners := [
-	Vector2(0, 0),             # שמאל למעלה
-	Vector2(1152, 0),          # ימין למעלה
-	Vector2(0, 648),          # שמאל למטה
-	Vector2(1152, 648)        # ימין למטה
+	Vector2(0, 0),
+	Vector2(1152, 0),
+	Vector2(0, 648),
+	Vector2(1152, 648)
 ]
 
 func _ready():
-	spawn_crow()  # הראשון מיידית
+	randomize()
+	print("READY")
+
+	# חכה 30 שניות לפני התחלה
+	await get_tree().create_timer(initial_delay).timeout
+
+	print("⏳ Delay over, starting spawner")
+	spawn_crow()
 	start_spawning()
 
 func start_spawning():
 	var timer := Timer.new()
 	timer.wait_time = spawn_interval
-	timer.autostart = true
 	timer.one_shot = false
+	timer.autostart = true
 	timer.timeout.connect(spawn_crow)
 	add_child(timer)
+	print("Spawner timer started")
 
 func spawn_crow():
+	print("spawn_crow called")
+
 	if not is_instance_valid(crow_scene):
 		print("Crow scene not set.")
 		return
@@ -30,4 +42,5 @@ func spawn_crow():
 	var crow = crow_scene.instantiate()
 	var random_pos = corners[randi() % corners.size()]
 	crow.global_position = random_pos
-	get_tree().current_scene.call_deferred("add_child", crow)
+	add_child(crow)
+	print("Spawning crow at:", random_pos)

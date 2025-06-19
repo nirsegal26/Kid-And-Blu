@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://pila1dftcxca"]
+[gd_scene load_steps=60 format=3 uid="uid://pila1dftcxca"]
 
 [ext_resource type="Script" uid="uid://drxtph21w3eqv" path="res://scripts/energy_ball.gd" id="1_q65h0"]
 [ext_resource type="Texture2D" uid="uid://cqgs44t1uf4tp" path="res://art/sprites/characters/attack.png" id="2_jiy41"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ek5bfm8jxxp6" path="res://art/sprites/characters/crow/die_down.png" id="7_ywc1y"]
 [ext_resource type="Texture2D" uid="uid://c30sdhtywnv2b" path="res://art/sprites/characters/crow/die_up.png" id="8_3uxj8"]
 [ext_resource type="Texture2D" uid="uid://wxmg8er7uvla" path="res://art/sprites/characters/Up_attack.png" id="8_61d6q"]
+[ext_resource type="AudioStream" uid="uid://b8xk21m1vbuqw" path="res://music/Crow Fight #birds_and_animal_sounds  #animalsounds #birdsounds #yt #ytshort (mp3cut.net).mp3" id="12_34vty"]
 [ext_resource type="AudioStream" uid="uid://cp61132me4n4r" path="res://music/Throat cut (sound effect) (mp3cut.net).mp3" id="12_cr6bj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3buwp"]
@@ -486,5 +487,9 @@ shape = SubResource("CircleShape2D_o0fbf")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_cr6bj")
 volume_db = 7.495
+
+[node name="attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_34vty")
+volume_db = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

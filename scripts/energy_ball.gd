@@ -16,8 +16,12 @@ var can_attack := true
 var last_direction := Vector2.ZERO  # כיוון תנועה אחרון
 
 func _ready():
-	target = get_node_or_null("/root/Node2D/Player")
-	life_timer.start(30.0)  # חיים מקסימליים לעורב
+	target = Global.player
+	if target == null:
+		print("❌ Global.player is null")
+	else:
+		print("✅ Target found via Global")
+	life_timer.start(30.0)
 
 func _physics_process(delta):
 	if is_dying or target == null:
@@ -54,7 +58,8 @@ func update_fly_animation(dir: Vector2) -> void:
 
 func perform_attack(dir: Vector2):
 	can_attack = false
-
+	if not $attack.playing:
+		$attack.play()
 	if dir.y < -0.5:
 		animated_sprite.play("up_attack")
 	elif dir.y > 0.5:
@@ -62,7 +67,6 @@ func perform_attack(dir: Vector2):
 	else:
 		animated_sprite.play("attack")
 		animated_sprite.flip_h = dir.x < 0
-
 	attack_and_reset()
 
 func attack_and_reset() -> void:
@@ -74,7 +78,6 @@ func attack_and_reset() -> void:
 	if is_instance_valid(target) and global_position.distance_to(target.global_position) <= attack_range + 10:
 		Global.player_health -= 10
 		Global.player.update_health()
-
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 

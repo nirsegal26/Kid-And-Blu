@@ -1,6 +1,6 @@
-AudioStreamPlayer
 CollisionShape2D
 Area2D
+AudioStreamPlayer
 AnimatedSprite2D
 VBoxContainer
 Label

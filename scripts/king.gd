@@ -98,7 +98,7 @@ func _on_hit_player_timeout() -> void:
 
 	# Deal damage to player
 	if Global.player_health > 0:
-		Global.player_health -= (16.67)
+		Global.player_health -= (20)
 
 		if Global.player and Global.player.has_method("update_health"):
 			Global.player.update_health()
