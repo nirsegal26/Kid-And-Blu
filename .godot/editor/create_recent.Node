@@ -1,7 +1,9 @@
+AnimatedSprite2D
 CollisionShape2D
 Area2D
+CharacterBody2D
 AudioStreamPlayer
-AnimatedSprite2D
+AnimationPlayer
 VBoxContainer
 Label
 ProgressBar
@@ -10,5 +12,3 @@ Node
 Timer
 Sprite2D
 ColorRect
-CharacterBody2D
-GPUParticles2D

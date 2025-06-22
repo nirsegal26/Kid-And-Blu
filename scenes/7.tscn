@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://cuheb3byktb0b"]
+[gd_scene load_steps=74 format=4 uid="uid://cuheb3byktb0b"]
 
 [ext_resource type="Script" uid="uid://cp6f6j64sny4q" path="res://scripts/7.gd" id="1_7ipw2"]
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_8kmwq"]
@@ -19,11 +19,17 @@
 [ext_resource type="Shader" uid="uid://425yqr8f0xc0" path="res://scenes/7.gdshader" id="16_6l3nu"]
 [ext_resource type="Texture2D" uid="uid://d2nuk014aknu" path="res://objects.png" id="17_di5te"]
 [ext_resource type="Texture2D" uid="uid://dq27mktxs532c" path="res://scenes/objects2.png" id="18_6l3nu"]
-[ext_resource type="PackedScene" uid="uid://f5norbpuxfng" path="res://scenes/blu.tscn" id="19_di5te"]
 [ext_resource type="PackedScene" uid="uid://cjw8uxrdg7hnb" path="res://scenes/pause_menu.tscn" id="20_xv43n"]
 [ext_resource type="AudioStream" uid="uid://c1vqn6doe6pbw" path="res://music/Rain Sound Effect Short - Rain in Nature (mp3cut.net) (1).mp3" id="21_jthu4"]
+[ext_resource type="Texture2D" uid="uid://rh13hgxfjiae" path="res://art/sprites/characters/slime.png" id="22_7ipw2"]
+[ext_resource type="Texture2D" uid="uid://bwdv71qef40te" path="res://art/sprites/characters/fly.png" id="23_3axax"]
+[ext_resource type="FontFile" uid="uid://clmr0r2ohpx88" path="res://others/superstar_memesbruh03.ttf" id="24_78ecv"]
+[ext_resource type="Texture2D" uid="uid://bi5vxoajjrwmf" path="res://others/ChatGPT Image Apr 18, 2025, 03_16_16 PM.png" id="25_bnkhe"]
+[ext_resource type="AudioStream" uid="uid://dfdv0y1togkjl" path="res://music/Evil Crow Sound Effect (Royalty Free).mp3" id="26_78ecv"]
+[ext_resource type="Texture2D" uid="uid://cyfn2vuk0ckuk" path="res://others/3.png" id="27_g83t0"]
+[ext_resource type="Texture2D" uid="uid://ch40u3oxkkojj" path="res://others/ChatGPT Image Apr 12, 2025, 03_48_06 PM.png" id="28_pxsj6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jthu4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ipw2"]
 texture = ExtResource("1_8kmwq")
 0:0/0 = 0
 1:0/0 = 0
@@ -85,7 +91,7 @@ texture = ExtResource("1_8kmwq")
 3:7/0 = 0
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, -8, 2.5, -5.375, 3.76724, -3.55017, 5.625, -0.875, 5.625, 3.375, 3.625, 6.5, -8, 6.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ipw2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exqye"]
 texture = ExtResource("2_e3g2c")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.25, -8, 8, -8, 8, 8, -5.375, 8)
@@ -201,7 +207,7 @@ texture = ExtResource("2_e3g2c")
 4:12/0 = 0
 5:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exqye"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oubvs"]
 texture = ExtResource("3_272l0")
 0:0/0 = 0
 1:0/0 = 0
@@ -216,7 +222,7 @@ texture = ExtResource("3_272l0")
 4:1/0 = 0
 5:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oubvs"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3axax"]
 texture = ExtResource("4_r5nbk")
 0:0/animation_columns = 6
 0:0/animation_separation = Vector2i(4, 0)
@@ -353,7 +359,7 @@ texture = ExtResource("4_r5nbk")
 21:1/0 = 0
 26:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3axax"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78ecv"]
 texture = ExtResource("5_7y2dg")
 0:0/0 = 0
 0:0/0/y_sort_origin = 1
@@ -388,11 +394,11 @@ texture = ExtResource("5_7y2dg")
 10:7/0/y_sort_origin = 3
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(10.5, 10, 2, 10.25, -6.25, 10.25, -11.25, 6.5, -12, 1, -12.5, -2, -8, -3, -3.5, -1, 8, -1.25, 11, 0.75, 11.75, 3)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78ecv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnkhe"]
 texture = ExtResource("6_6l3nu")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnkhe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g83t0"]
 texture = ExtResource("7_di5te")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.5, -3, 8, -2.875, 8, 8, -4.625, 8)
@@ -420,7 +426,7 @@ texture = ExtResource("7_di5te")
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.44715, -8, 3.44715, 5.92202, -8, 5.89293)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g83t0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxsj6"]
 texture = ExtResource("8_xv43n")
 0:0/0 = 0
 1:0/0 = 0
@@ -443,7 +449,7 @@ texture = ExtResource("8_xv43n")
 2:4/0 = 0
 3:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxsj6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1v3aa"]
 texture = ExtResource("9_jthu4")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.77703, -5.57562, 4.49647, -5.03604, 4.13675, 8, -2.87774, 8)
@@ -473,7 +479,7 @@ texture = ExtResource("9_jthu4")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.13675, -5.39576, 4.13675, 5.03605, -2.51802, 4.85619, -8, 3.41732, -8, -2.1583, -3.06264, -4.87603)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1v3aa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1att"]
 texture = ExtResource("10_7ipw2")
 0:0/0 = 0
 1:0/0 = 0
@@ -557,7 +563,7 @@ texture = ExtResource("10_7ipw2")
 2:11/0 = 0
 3:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1att"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8q1c"]
 texture = ExtResource("11_exqye")
 0:0/0 = 0
 1:0/0 = 0
@@ -568,21 +574,21 @@ texture = ExtResource("11_exqye")
 
 [sub_resource type="TileSet" id="TileSet_ylf64"]
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_78ecv")
-sources/16 = SubResource("TileSetAtlasSource_3axax")
-sources/0 = SubResource("TileSetAtlasSource_jthu4")
-sources/5 = SubResource("TileSetAtlasSource_bnkhe")
-sources/6 = SubResource("TileSetAtlasSource_g83t0")
-sources/7 = SubResource("TileSetAtlasSource_pxsj6")
-sources/8 = SubResource("TileSetAtlasSource_1v3aa")
-sources/9 = SubResource("TileSetAtlasSource_h1att")
-sources/10 = SubResource("TileSetAtlasSource_exqye")
-sources/12 = SubResource("TileSetAtlasSource_oubvs")
-sources/1 = SubResource("TileSetAtlasSource_7ipw2")
+sources/3 = SubResource("TileSetAtlasSource_bnkhe")
+sources/16 = SubResource("TileSetAtlasSource_78ecv")
+sources/0 = SubResource("TileSetAtlasSource_7ipw2")
+sources/5 = SubResource("TileSetAtlasSource_g83t0")
+sources/6 = SubResource("TileSetAtlasSource_pxsj6")
+sources/7 = SubResource("TileSetAtlasSource_1v3aa")
+sources/8 = SubResource("TileSetAtlasSource_h1att")
+sources/9 = SubResource("TileSetAtlasSource_w8q1c")
+sources/10 = SubResource("TileSetAtlasSource_oubvs")
+sources/12 = SubResource("TileSetAtlasSource_3axax")
+sources/1 = SubResource("TileSetAtlasSource_exqye")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4nqco"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w8q1c"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8xwcw"]
 width = 1152
 height = 648
 generate_mipmaps = false
@@ -591,7 +597,7 @@ noise = SubResource("FastNoiseLite_4nqco")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbva6"]
 shader = ExtResource("12_oubvs")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_w8q1c")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_8xwcw")
 shader_parameter/density = 0.4
 shader_parameter/speed = Vector2(0.02, 0.01)
 
@@ -599,14 +605,14 @@ shader_parameter/speed = Vector2(0.02, 0.01)
 _data = [Vector2(0, 0.539326), 0.0, 2.25892, 0, 0, Vector2(0.492647, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.516854), -1.4754, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_8xwcw"]
+[sub_resource type="CurveTexture" id="CurveTexture_u02ec"]
 curve = SubResource("Curve_ft587")
 
 [sub_resource type="Gradient" id="Gradient_swpde"]
 offsets = PackedFloat32Array(0, 0.190909, 0.218182)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0784314, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_u02ec"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gmw3r"]
 gradient = SubResource("Gradient_swpde")
 
 [sub_resource type="Curve" id="Curve_3x3mf"]
@@ -624,7 +630,7 @@ _limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_gmw3r"]
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_pc4ro"]
 curve_x = SubResource("Curve_3x3mf")
 curve_y = SubResource("Curve_4tncc")
 curve_z = SubResource("Curve_2t2qp")
@@ -635,9 +641,9 @@ emission_shape = 3
 emission_box_extents = Vector3(700, 1, 1)
 gravity = Vector3(0, 1500, 0)
 scale_min = 0.2
-scale_over_velocity_curve = SubResource("CurveXYZTexture_gmw3r")
-color_initial_ramp = SubResource("GradientTexture1D_u02ec")
-alpha_curve = SubResource("CurveTexture_8xwcw")
+scale_over_velocity_curve = SubResource("CurveXYZTexture_pc4ro")
+color_initial_ramp = SubResource("GradientTexture1D_gmw3r")
+alpha_curve = SubResource("CurveTexture_u02ec")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xv43n"]
 shader = ExtResource("16_6l3nu")
@@ -657,6 +663,303 @@ size = Vector2(1168, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exqye"]
 size = Vector2(20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exqye"]
+atlas = ExtResource("22_7ipw2")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oubvs"]
+atlas = ExtResource("22_7ipw2")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3axax"]
+atlas = ExtResource("22_7ipw2")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g83t0"]
+atlas = ExtResource("22_7ipw2")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78ecv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exqye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oubvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3axax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g83t0")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg708"]
+atlas = ExtResource("23_3axax")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggelq"]
+atlas = ExtResource("23_3axax")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7jjx"]
+atlas = ExtResource("23_3axax")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2h0i"]
+atlas = ExtResource("23_3axax")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieyw0"]
+atlas = ExtResource("23_3axax")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxsj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg708")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggelq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7jjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2h0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieyw0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_h1att"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 313)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(497, 262)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D2:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer3/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer4/kid_talk:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer5/kid_talk:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w8q1c"]
+resource_name = "kid_talk"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer4/kid_talk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1v3aa"]
+resource_name = "kidnap"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 313), Vector2(639, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(497, 262), Vector2(6, 302), Vector2(642, -47)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer2/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D2:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"new_animation"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer3/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer5/kid_talk:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6, 6.7, 7.96667, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8q1c"]
+_data = {
+&"RESET": SubResource("Animation_h1att"),
+&"kid_talk": SubResource("Animation_w8q1c"),
+&"kidnap": SubResource("Animation_1v3aa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xwcw"]
+size = Vector2(56, 59)
 
 [node name="7" type="Node2D"]
 modulate = Color(0.683077, 0.683077, 0.683077, 1)
@@ -702,7 +1005,7 @@ offset_bottom = 648.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("13_3axax")]
-position = Vector2(8, 325)
+position = Vector2(18, 329)
 collision_layer = 7
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -716,7 +1019,7 @@ process_material = SubResource("ParticleProcessMaterial_t0kxi")
 
 [node name="Skeleton4" parent="." instance=ExtResource("14_e3g2c")]
 modulate = Color(0, 0, 0, 0.486275)
-position = Vector2(308, 322)
+position = Vector2(898, 127)
 collision_mask = 4
 
 [node name="Skeleton5" parent="." instance=ExtResource("14_e3g2c")]
@@ -991,9 +1294,6 @@ shape = SubResource("RectangleShape2D_di5te")
 position = Vector2(587, 701)
 shape = SubResource("RectangleShape2D_di5te")
 
-[node name="Blu" parent="." instance=ExtResource("19_di5te")]
-position = Vector2(0, 318)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("20_xv43n")]
@@ -1013,4 +1313,156 @@ autoplay = true
 position = Vector2(1177, 318.5)
 shape = SubResource("RectangleShape2D_exqye")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 313)
+sprite_frames = SubResource("SpriteFrames_78ecv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 6
+position = Vector2(497, 262)
+sprite_frames = SubResource("SpriteFrames_pxsj6")
+autoplay = "default"
+frame_progress = 0.352495
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_78ecv")
+theme_override_font_sizes/font_size = 32
+text = "watch out from the crow!"
+horizontal_alignment = 1
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer2/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("25_bnkhe")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+z_index = 7
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -68.0
+offset_right = 203.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_78ecv")
+theme_override_font_sizes/font_size = 32
+text = "it kindapped blu!"
+horizontal_alignment = 1
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer3/Label"]
+z_as_relative = false
+position = Vector2(198, 15)
+scale = Vector2(0.572266, 0.246338)
+texture = ExtResource("25_bnkhe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w8q1c")
+}
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_78ecv")
+volume_db = 4.685
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="kid_talk" type="Label" parent="CanvasLayer4"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.895
+anchor_right = 0.5
+anchor_bottom = 0.895
+offset_left = -332.0
+offset_top = -38.96
+offset_right = 274.0
+offset_bottom = 1.03998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_78ecv")
+theme_override_font_sizes/font_size = 40
+text = "i have to do it.. i have to save blu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer4/kid_talk"]
+z_as_relative = false
+position = Vector2(322, 1.50006)
+scale = Vector2(2.12019, 1.25481)
+texture = ExtResource("27_g83t0")
+
+[node name="ChatGptImageApr12,2025,034806Pm" type="Sprite2D" parent="CanvasLayer4/kid_talk"]
+position = Vector2(651.672, 19.4846)
+scale = Vector2(0.212296, 0.163786)
+texture = ExtResource("28_pxsj6")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(915, 311.5)
+shape = SubResource("RectangleShape2D_8xwcw")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="kid_talk" type="Label" parent="CanvasLayer5"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.895
+anchor_right = 0.5
+anchor_bottom = 0.895
+offset_left = -332.0
+offset_top = -38.96
+offset_right = 274.0
+offset_bottom = 1.03998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_78ecv")
+theme_override_font_sizes/font_size = 40
+text = "stay strong blu, i'm coming for you"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer5/kid_talk"]
+z_as_relative = false
+position = Vector2(322, 1.50006)
+scale = Vector2(2.12019, 1.25481)
+texture = ExtResource("27_g83t0")
+
+[node name="ChatGptImageApr12,2025,034806Pm" type="Sprite2D" parent="CanvasLayer5/kid_talk"]
+position = Vector2(651.672, 19.4846)
+scale = Vector2(0.212296, 0.163786)
+texture = ExtResource("28_pxsj6")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

@@ -18,9 +18,3 @@ res://scenes/8.tscn
 res://scenes/9.tscn
 res://scenes/10.tscn
 res://scenes/king.tscn
-res://scenes/crow_spawner.tscn
-res://scripts/10.gd
-res://scripts/crow_spawner.gd
-res://scripts/energy_ball.gd
-res://scenes/energy_ball.tscn
-res://scripts/9.gd

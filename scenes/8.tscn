@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dwbnevokw7ovv"]
+[gd_scene load_steps=56 format=4 uid="uid://dwbnevokw7ovv"]
 
 [ext_resource type="Script" uid="uid://cs4x2avvqilpq" path="res://scripts/8.gd" id="1_3kdoh"]
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_70utx"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://c1r7qxncu5onm" path="res://scenes/minotaur.tscn" id="22_uio0k"]
 [ext_resource type="PackedScene" uid="uid://bxkyqtk1ccauj" path="res://scenes/skeleton.tscn" id="23_4dsbu"]
 [ext_resource type="PackedScene" uid="uid://euawwxyg7uwl" path="res://scenes/prince.tscn" id="24_rtst7"]
-[ext_resource type="PackedScene" uid="uid://f5norbpuxfng" path="res://scenes/blu.tscn" id="25_4dsbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dsbu"]
 texture = ExtResource("1_70utx")
@@ -1221,9 +1220,6 @@ collision_mask = 4
 [node name="Prince" parent="." instance=ExtResource("24_rtst7")]
 position = Vector2(1005, 322)
 collision_mask = 4
-
-[node name="Blu" parent="." instance=ExtResource("25_4dsbu")]
-position = Vector2(-5, 319)
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -85,6 +85,8 @@ func unfreeze_princes():
 
 func _on_det_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and enemy_move:
+		$horn.play()
+		await get_tree().create_timer(0.5).timeout
 		if $AudioStreamPlayer.is_inside_tree():
 			$AudioStreamPlayer.play()
 		unfreeze_enemies()

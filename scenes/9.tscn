@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://8e0cu8cnbu47"]
+[gd_scene load_steps=96 format=4 uid="uid://8e0cu8cnbu47"]
 
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_fken5"]
 [ext_resource type="Script" uid="uid://b04t3oopt77mc" path="res://scripts/9.gd" id="1_y0d4m"]
@@ -30,12 +30,14 @@
 [ext_resource type="PackedScene" uid="uid://cjw8uxrdg7hnb" path="res://scenes/pause_menu.tscn" id="28_xfxep"]
 [ext_resource type="AudioStream" uid="uid://4e21n64a6gv2" path="res://music/Door close sound effect (mp3cut.net) (1).mp3" id="29_m3fu1"]
 [ext_resource type="AudioStream" uid="uid://bcydcpkylkjxu" path="res://music/Door close sound effect (mp3cut.net).mp3" id="30_iumpx"]
-[ext_resource type="PackedScene" uid="uid://f5norbpuxfng" path="res://scenes/blu.tscn" id="31_iumpx"]
 [ext_resource type="PackedScene" uid="uid://c0rlq8mbyl2os" path="res://scenes/crow_spawner.tscn" id="32_4omfk"]
 [ext_resource type="AudioStream" uid="uid://bjxlivpxnjspu" path="res://music/Crow Sound Effect.mp3" id="33_4vikd"]
 [ext_resource type="FontFile" uid="uid://clmr0r2ohpx88" path="res://others/superstar_memesbruh03.ttf" id="34_k5ij0"]
 [ext_resource type="Texture2D" uid="uid://bi5vxoajjrwmf" path="res://others/ChatGPT Image Apr 18, 2025, 03_16_16 PM.png" id="35_ndr8b"]
 [ext_resource type="PackedScene" uid="uid://darc3rffrt2jf" path="res://scenes/silver_chest.tscn" id="36_ndr8b"]
+[ext_resource type="AudioStream" uid="uid://cl1ddswavbkdc" path="res://music/Viking horn sound (mp3cut.net).mp3" id="37_jlf6a"]
+[ext_resource type="Texture2D" uid="uid://cyfn2vuk0ckuk" path="res://others/3.png" id="37_qj703"]
+[ext_resource type="Texture2D" uid="uid://ch40u3oxkkojj" path="res://others/ChatGPT Image Apr 12, 2025, 03_48_06 PM.png" id="38_hxy0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qj703"]
 texture = ExtResource("1_fken5")
@@ -1395,7 +1397,7 @@ sources/15 = SubResource("TileSetAtlasSource_1m5tn")
 sources/17 = SubResource("TileSetAtlasSource_xo8tf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0d4m"]
-size = Vector2(41, 20)
+size = Vector2(561, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuvlr"]
 size = Vector2(20, 14)
@@ -1465,6 +1467,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vh7tr"]
 resource_name = "new_animation"
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1606,7 +1609,7 @@ position = Vector2(-1, -3)
 tile_set = SubResource("TileSet_qm2gm")
 
 [node name="Player" parent="." instance=ExtResource("20_bh0f7")]
-position = Vector2(613, 429)
+position = Vector2(617, 432)
 
 [node name="Prince" parent="." instance=ExtResource("22_bwim4")]
 position = Vector2(642, 366)
@@ -1686,7 +1689,7 @@ position = Vector2(803, 437)
 [node name="1det_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1det_area"]
-position = Vector2(617, 505)
+position = Vector2(594.5, 512)
 shape = SubResource("RectangleShape2D_y0d4m")
 
 [node name="Golden Chest" parent="." instance=ExtResource("25_bwim4")]
@@ -1697,7 +1700,7 @@ position = Vector2(667, 360)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_nuvlr")
-volume_db = 17.0
+volume_db = 24.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -1735,10 +1738,7 @@ volume_db = 16.0
 
 [node name="open" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_iumpx")
-volume_db = 16.0
-
-[node name="Blu" parent="." instance=ExtResource("31_iumpx")]
-position = Vector2(-8, 325)
+volume_db = 19.0
 
 [node name="CrowSpawner" parent="." instance=ExtResource("32_4omfk")]
 
@@ -1794,6 +1794,45 @@ position = Vector2(316, 484)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_scene"]
 position = Vector2(615, 330)
 shape = SubResource("RectangleShape2D_ndr8b")
+
+[node name="horn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_jlf6a")
+volume_db = 10.307
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="kid_talk" type="Label" parent="CanvasLayer5"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.895
+anchor_right = 0.5
+anchor_bottom = 0.895
+offset_left = -332.0
+offset_top = -38.96
+offset_right = 274.0
+offset_bottom = 1.03998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("34_k5ij0")
+theme_override_font_sizes/font_size = 40
+text = "he is near.. i can feel him"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer5/kid_talk"]
+z_as_relative = false
+position = Vector2(322, 1.50006)
+scale = Vector2(2.12019, 1.25481)
+texture = ExtResource("37_qj703")
+
+[node name="ChatGptImageApr12,2025,034806Pm" type="Sprite2D" parent="CanvasLayer5/kid_talk"]
+position = Vector2(651.672, 19.4846)
+scale = Vector2(0.212296, 0.163786)
+texture = ExtResource("38_hxy0p")
 
 [connection signal="body_entered" from="1det_area" to="." method="_on_det_area_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

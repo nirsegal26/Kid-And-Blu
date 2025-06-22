@@ -1,9 +1,10 @@
 extends Node2D
 var scene_to_load := "res://scenes/8.tscn"
-
+var kid_talk = true
 func _ready() -> void:
 	load_scene_async()
-
+	$AnimationPlayer.play("kidnap")
+	$AudioStreamPlayer2.play()
 func load_scene_async() -> void:
 	
 
@@ -27,3 +28,9 @@ func change_scenes():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		Global.transition_scene = true
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body.name == "Player" and kid_talk:
+		$AnimationPlayer.play("kid_talk")
+		kid_talk = false

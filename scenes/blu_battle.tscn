@@ -1158,6 +1158,7 @@ theme_override_font_sizes/font_size = 40
 text = "kid talk"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ChatGptImageApr18,2025,031616Pm" type="Sprite2D" parent="CanvasLayer/kid_talk"]
 z_as_relative = false
