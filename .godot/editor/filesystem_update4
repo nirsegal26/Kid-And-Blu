@@ -18,3 +18,16 @@ res://scenes/8.tscn
 res://scenes/9.tscn
 res://scenes/10.tscn
 res://scenes/king.tscn
+res://scenes/game_over.tscn
+res://scenes/win.tscn
+res://scenes/music_controller.tscn
+res://scripts/music_controller.gd
+res://scenes/main_menu.tscn
+res://scenes/skeleton.tscn
+res://scenes/minotaur.tscn
+res://scenes/player.tscn
+res://scenes/prince.tscn
+res://scripts/win.gd
+res://scripts/game_over.gd
+res://scripts/king.gd
+res://scripts/global.gd

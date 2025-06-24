@@ -1066,7 +1066,7 @@ tile_set = SubResource("TileSet_oepud")
 position = Vector2(847, 354)
 
 [node name="Player" parent="." instance=ExtResource("20_q4ovc")]
-position = Vector2(5, 75)
+position = Vector2(7, 72)
 
 [node name="Minotaur" parent="." instance=ExtResource("20_e6fmh")]
 position = Vector2(801, 334)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://cgxscld6i706c"]
+[gd_scene load_steps=69 format=4 uid="uid://cgxscld6i706c"]
 
 [ext_resource type="Script" uid="uid://b0ume61ng3k4" path="res://scripts/10.gd" id="1_5w455"]
 [ext_resource type="Texture2D" uid="uid://7vjgf3lyo4x5" path="res://art/tilesets/plains.png" id="1_udq56"]
@@ -765,7 +765,7 @@ sources/17 = SubResource("TileSetAtlasSource_tc8ne")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jrdn2"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m2ljp"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kdnpe"]
 width = 1152
 height = 648
 generate_mipmaps = false
@@ -774,8 +774,8 @@ noise = SubResource("FastNoiseLite_jrdn2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5w455"]
 shader = ExtResource("22_cvs4o")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_m2ljp")
-shader_parameter/density = 0.4
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_kdnpe")
+shader_parameter/density = 0.0
 shader_parameter/speed = Vector2(0.02, 0.01)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472at"]
@@ -831,8 +831,156 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Animation" id="Animation_pldts"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.683077, 0.683077, 0.683077, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uv8uf"]
+resource_name = "new_animation"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.683077, 0.683077, 0.683077, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i55cu"]
+_data = {
+&"RESET": SubResource("Animation_pldts"),
+&"new_animation": SubResource("Animation_uv8uf")
+}
+
+[sub_resource type="Animation" id="Animation_i55cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_5w455")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:material:shader_parameter/density")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8hbwq"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.145098, 0.145098, 0.145098, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_5w455")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:material:shader_parameter/density")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.4, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_33a7o"]
+resource_name = "rr"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.683077, 0.683077, 0.683077, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer/ColorRect:material:shader_parameter/density")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33a7o"]
+_data = {
+&"RESET": SubResource("Animation_i55cu"),
+&"new_animation": SubResource("Animation_8hbwq"),
+&"rr": SubResource("Animation_33a7o")
+}
+
 [node name="10" type="Node2D"]
-modulate = Color(0.683077, 0.683077, 0.683077, 1)
 y_sort_enabled = true
 script = ExtResource("1_5w455")
 
@@ -994,6 +1142,16 @@ scale = Vector2(0.8125, 0.8125)
 sprite_frames = SubResource("SpriteFrames_i55cu")
 autoplay = "default"
 frame_progress = 0.295121
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i55cu")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_33a7o")
+}
 
 [connection signal="body_entered" from="fight_watch_area" to="." method="_on_fight_watch_area_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1397,7 +1397,7 @@ sources/15 = SubResource("TileSetAtlasSource_1m5tn")
 sources/17 = SubResource("TileSetAtlasSource_xo8tf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0d4m"]
-size = Vector2(561, 34)
+size = Vector2(561, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuvlr"]
 size = Vector2(20, 14)
@@ -1609,7 +1609,7 @@ position = Vector2(-1, -3)
 tile_set = SubResource("TileSet_qm2gm")
 
 [node name="Player" parent="." instance=ExtResource("20_bh0f7")]
-position = Vector2(617, 432)
+position = Vector2(16, 319)
 
 [node name="Prince" parent="." instance=ExtResource("22_bwim4")]
 position = Vector2(642, 366)
@@ -1689,7 +1689,7 @@ position = Vector2(803, 437)
 [node name="1det_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1det_area"]
-position = Vector2(594.5, 512)
+position = Vector2(594.5, 518.5)
 shape = SubResource("RectangleShape2D_y0d4m")
 
 [node name="Golden Chest" parent="." instance=ExtResource("25_bwim4")]

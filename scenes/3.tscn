@@ -689,8 +689,8 @@ shape = SubResource("RectangleShape2D_pc0kq")
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer3" instance=ExtResource("16_4ap0d")]
-offset_left = 5.0
-offset_right = 5.0
+offset_top = 0.0
+offset_bottom = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
 

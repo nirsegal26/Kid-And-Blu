@@ -9,6 +9,7 @@ var can_take_damage = true
 var is_dead = false
 var patrol_direction := Vector2(1, 0)
 var patrol_change_timer := 0.0
+signal died
 @onready var attack_timer: Timer = $hit_player
 
 func _ready() -> void:
@@ -150,6 +151,7 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
+	emit_signal("died")
 	$AnimatedSprite2D.play("Death")
 	$CanvasLayer/ProgressBar2.hide()
 	velocity = Vector2.ZERO
@@ -157,7 +159,8 @@ func die():
 	$CollisionShape2D.set_deferred("disabled", true)
 	player_chase = false
 	player_inattack_zone = false
-
+	$CanvasLayer/ProgressBar2.hide()
+	$"CanvasLayer/ChatGptImageJun8,2025,065808Pm".hide()
 func _on_take_damage_cooldown_timeout() -> void:
 	can_take_damage = true
 

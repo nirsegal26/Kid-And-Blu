@@ -31,7 +31,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		startover()
 
 func startover() -> void:
-	if Global.last_scene_path != "":
-		get_tree().change_scene_to_file(Global.last_scene_path)
-	else:
-		print("No scene to restart.")
+	Global.reset_game_state()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
