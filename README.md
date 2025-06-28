@@ -1,59 +1,69 @@
 # 🎮 Kid & Blu 🎮
 
-**Kid & Blu** is a 2D action-adventure indie game built with **Godot 4.4.1**, where the player must protect a small blue slime named Blu from waves of skeleton enemies deep within an enchanted forest.
+**Kid & Blu** is a 2D pixel-art adventure game built with [Godot Engine 4.4.1](https://godotengine.org/).  
+Play as Kid, a young ranger, and his mysterious blob companion, Blu, on a dangerous journey to cleanse the forest from the undead skeletons. Explore challenging scenes, dodge traps, battle enemies, and level up!
 
 ---
 
-## Features
-
-- Real-time combat with animated feedback
-- Enemy AI with damage and attack zones
-- Scene transitions with position memory (return to previous area at same position)
-- XP system and level-up mechanics
-- "Game Over" typing animation and wave-like UI effects
-- Pixel art environments and characters
-- Integrated sound effects and visual feedback
-- Save/Load mechanics for scene and XP state
+## 🕹️ Gameplay Trailer
+[▶ Watch the trailer on YouTube](https://youtu.be/z7CwiI9pXpY)
 
 ---
 
 ## 📷 Screenshots
 
-![Level Up](https://github.com/user-attachments/assets/ffe30391-232b-48e0-8f3f-41d128559c04)
-![Health Box](https://github.com/user-attachments/assets/d3307974-cc37-4a29-b373-92d952feada1)
-![General Image](https://github.com/user-attachments/assets/b9890549-0061-47d6-b19a-09290d975060)
-![Dying](https://github.com/user-attachments/assets/eaea9f2d-64e9-44d3-8df6-25a3fa74f53c)
-![Battle](https://github.com/user-attachments/assets/e0122fb3-2d5d-4c67-9d07-0052e0debedd)
-![Battle ;-)](https://github.com/user-attachments/assets/42f2ce11-8846-488f-a5b3-9eea31b3a4ac)
-![צילום מסך 2025-04-23 150201](https://github.com/user-attachments/assets/23aece9b-3ac4-4258-a312-caa6d4a0fbec)
-![צילום מסך 2025-04-23 150031](https://github.com/user-attachments/assets/323d5804-00ce-48bc-9338-2a231b8576d2)
-![צילום מסך 2025-04-23 145846](https://github.com/user-attachments/assets/f2f3f70e-bd76-413f-be44-95fd28809bd2)
-
+![Level Up](https://github.com/user-attachments/assets/1366180c-380e-476c-9351-13c57cc17a56)
+![Health Box](https://github.com/user-attachments/assets/c5a24c45-d031-4ca2-8fc4-e16ed7ceb77b)
+![General Image](https://github.com/user-attachments/assets/9f5fe0f5-631f-45c7-88b9-6639e6baa1fb)
+![Battle](https://github.com/user-attachments/assets/f98e06a9-d280-4649-b54e-6d59695d9314)
+![צילום מסך 2025-04-23 145846](https://github.com/user-attachments/assets/165232bc-e583-460e-81f7-8687926e26de)
 
 
 ---
 
-## Tech Stack
+## 🚀 Features
 
-- **Engine:** [Godot 4.4.1](https://godotengine.org/)
-- **Language:** GDScript
-- **Graphics:** Pixel Art (Aseprite)
-- **Version Control:** Git + GitHub
+- 🔥 Intense pixel-art combat against skeletons & bosses
+- 🎮 Level-up system with XP and upgrades
+- 🧠 Environmental puzzles and platforming
+- 🌲 Hand-crafted dark fantasy atmosphere
+- 💀 Death means starting over — good luck!
 
 ---
 
-## To Do
+## 🛠️ Built With
 
--  Add story-driven levels
-- Polish UI transitions
-- Add boss fight
-- Upload to itch.io
+- **Engine**: [Godot 4.4.1](https://godotengine.org/)
+- **Language**: GDScript
+- **Audio**: Mixed from royalty-free tracks & classic themes
 
-## Links
+---
+
+## 📦 Installation
+
+1. Clone the repo:
+    ```bash
+    git clone https://github.com/YourUsername/Kid-and-Blu.git
+    cd Kid-and-Blu
+    ```
+2. Open `project.godot` in **Godot 4.4.1**
+3. Press ▶ to play the game!
+
+**Note:** Make sure your Godot version is 4.4.1 for compatibility.
+
+---
+
+## 💬 Contact
+
+For feedback, bug reports or support, contact:  
+📧 **nirsegal7@gmail.com**  
+
+---
+
+## 🧷 Links
 
 LinkedIn Profile
 www.linkedin.com/in/nirsegal26
 
 Itch.io page (coming soon)
 
-Gameplay video (coming soon)
