@@ -804,14 +804,6 @@ shape = SubResource("RectangleShape2D_pm21f")
 [node name="Golden Chest" parent="." instance=ExtResource("19_pm21f")]
 position = Vector2(1107, 506)
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer3" instance=ExtResource("16_dss4m")]
-offset_left = 16.0
-offset_top = 1.0
-offset_right = 16.0
-offset_bottom = 1.0
-
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 5
 material = SubResource("ShaderMaterial_7iits")
@@ -819,5 +811,11 @@ offset_left = 932.0
 offset_top = -18.0
 offset_right = 1219.0
 offset_bottom = 565.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer3" instance=ExtResource("16_dss4m")]
+offset_top = 0.0
+offset_bottom = 0.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

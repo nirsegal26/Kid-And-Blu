@@ -702,7 +702,7 @@ position = Vector2(3, 331)
 
 [node name="Player" parent="." instance=ExtResource("14_lx3em")]
 modulate = Color(0.907942, 0.907942, 0.907942, 1)
-position = Vector2(11, 316)
+position = Vector2(17, 319)
 collision_layer = 7
 
 [node name="Minotaur" parent="." instance=ExtResource("15_fv37u")]

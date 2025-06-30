@@ -1,18 +1,15 @@
 extends Node
 
 var player: AudioStreamPlayer
-var default_stream: AudioStream
-var game_stream = preload("res://others/mix_38m04s (audio-joiner.com).mp3") as AudioStreamMP3
-var halloween_stream = preload("res://music/Pokémon GO OST - Halloween (Lavender Town) (mp3cut.net).mp3") as AudioStreamMP3
-var final_battle_stream = preload("res://music/final_battle.mp3") as AudioStreamMP3
-var main_theme = preload("res://music/FireredLeafgreen Opening and Title remix (mp3cut.net) (1).mp3") as AudioStreamMP3
-var game_over = preload("res://music/mix_4m00s (audio-joiner.com) (1).mp3") as AudioStreamMP3
-var allowed_scenes := ["Main Menu", "how_to", "segal","win"]
-var delayed_scenes := { "segal": 2.0 }
-
+var default_stream: AudioStream = null
 var current_scene_name := ""
 var delay_timer := 0.0
 var delay_active := false
+
+var allowed_scenes := ["Main Menu", "how_to", "segal", "win"]
+var delayed_scenes := { "segal": 2.0 }
+
+var loaded_streams := {}
 
 func _ready():
 	player = AudioStreamPlayer.new()
@@ -20,16 +17,8 @@ func _ready():
 	player.volume_db = 0
 	player.autoplay = true
 
-	# שים את main_theme כברירת מחדל לסצנות המורשות
-	default_stream = main_theme
+	default_stream = _get_stream("res://music/FireredLeafgreen Opening and Title remix (mp3cut.net) (1).mp3")
 
-	# הפעל לולאה לכל המוזיקות
-	game_stream.loop = true
-	halloween_stream.loop = true
-	final_battle_stream.loop = true
-	main_theme.loop = true
-	game_over.loop = true
-	
 	if get_tree().current_scene:
 		current_scene_name = get_tree().current_scene.name
 		_check_scene_start(current_scene_name)
@@ -51,35 +40,34 @@ func _process(delta):
 			if not player.playing:
 				player.play()
 
+func _get_stream(path: String) -> AudioStream:
+	if loaded_streams.has(path):
+		return loaded_streams[path]
+	var stream = load(path)
+	if stream:
+		stream.loop = true
+		loaded_streams[path] = stream
+	return stream
+
 func _check_scene_start(scene_name: String):
 	print("Scene switched to:", scene_name)
 
 	if scene_name == "10":
 		delay_active = false
-		if player.stream != final_battle_stream:
-			player.stop()
-			player.stream = final_battle_stream
-		if not player.playing:
-			player.play()
+		var stream = _get_stream("res://music/final battle final.mp3")
+		_switch_stream(stream)
 		return
 
 	if scene_name == "game_over":
 		delay_active = false
-		if player.stream != game_over:
-			player.stop()
-			player.stream = game_over
-			player.volume_db = 3
-		if not player.playing:
-			player.play()
+		var stream = _get_stream("res://music/mix_4m00s (audio-joiner.com) (1).mp3")
+		player.volume_db = 3
+		_switch_stream(stream)
 		return
 
 	if scene_name in allowed_scenes:
 		delay_active = false
-		if player.stream != default_stream:
-			player.stop()
-			player.stream = default_stream
-		if not player.playing:
-			player.play()
+		_switch_stream(default_stream)
 		return
 
 	if scene_name in delayed_scenes:
@@ -94,14 +82,17 @@ func _check_scene_start(scene_name: String):
 		if scene_number >= 6:
 			delay_timer = 1.0
 			delay_active = true
-			if player.stream != halloween_stream:
-				player.stop()
-				player.stream = halloween_stream
+			var stream = _get_stream("res://music/Pokémon GO OST - Halloween (Lavender Town) (mp3cut.net).mp3")
+			_switch_stream(stream)
 			return
 
 	delay_active = false
-	if player.stream != game_stream:
+	var stream = _get_stream("res://others/mix_38m04s (audio-joiner.com).mp3")
+	_switch_stream(stream)
+
+func _switch_stream(stream: AudioStream):
+	if player.stream != stream:
 		player.stop()
-		player.stream = game_stream
+		player.stream = stream
 	if not player.playing:
 		player.play()

@@ -1,9 +1,9 @@
 extends Node
 
 @export var spawn_interval := 5.0
-@export var initial_delay := 7.0  # כמה זמן לחכות לפני הפעלת ה-Spawner
+@export var initial_delay := 7.0  
 
-var crow_scene: PackedScene = preload("res://scenes/energy_ball.tscn")
+var crow_scene: PackedScene = load("res://scenes/energy_ball.tscn")
 
 var corners := [
 	Vector2(0, 0),
@@ -16,7 +16,6 @@ func _ready():
 	randomize()
 	print("READY")
 
-	# חכה 30 שניות לפני התחלה
 	await get_tree().create_timer(initial_delay).timeout
 
 	print("⏳ Delay over, starting spawner")

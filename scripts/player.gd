@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var dust_anim: AnimatedSprite2D = $AnimatedSprite2D2
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 100
+var health = 10000
 var player_alive = true
 signal battle_started
 var can_move = true

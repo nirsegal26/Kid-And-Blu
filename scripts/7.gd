@@ -1,6 +1,7 @@
 extends Node2D
 var scene_to_load := "res://scenes/8.tscn"
 var kid_talk = true
+var ghost_shader := preload("res://scenes/6.gdshader")
 func _ready() -> void:
 	load_scene_async()
 	$AnimationPlayer.play("kidnap")

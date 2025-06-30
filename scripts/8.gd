@@ -1,6 +1,6 @@
 extends Node2D
 var scene_to_load := "res://scenes/9.tscn"
-
+var ghost_shader := preload("res://scenes/6.gdshader")
 func _ready() -> void:
 	load_scene_async()
 

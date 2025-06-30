@@ -466,9 +466,9 @@ stream = ExtResource("5_5pgwy")
 
 [node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 613.0
-offset_top = 871.0
+offset_top = 817.0
 offset_right = 1354.0
-offset_bottom = 897.0
+offset_bottom = 843.0
 theme_override_styles/background = SubResource("StyleBoxFlat_6iuwv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_y26ih")
 show_percentage = false
@@ -476,7 +476,7 @@ show_percentage = false
 [node name="ChatGptImageJun8,2025,065808Pm" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0.374139, 0.374139, 0.374139, 1)
 texture_filter = 1
-position = Vector2(982.877, 881)
+position = Vector2(982.877, 827)
 scale = Vector2(1.63613, 1.26154)
 texture = ExtResource("6_y26ih")
 region_enabled = true

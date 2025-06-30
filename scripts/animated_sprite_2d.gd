@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@onready var margin = Vector2(290, 210) # מרחק מהפינה
+@onready var margin = Vector2(290, 160) # מרחק מהפינה
 
 func _ready():
 	update_position()

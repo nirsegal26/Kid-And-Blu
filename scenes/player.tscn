@@ -1,11 +1,10 @@
-[gd_scene load_steps=81 format=4 uid="uid://2j30rkwafm6a"]
+[gd_scene load_steps=80 format=4 uid="uid://2j30rkwafm6a"]
 
 [ext_resource type="Script" uid="uid://db70odjfneibe" path="res://scripts/player.gd" id="1_ofpl0"]
 [ext_resource type="Texture2D" uid="uid://6h7gfscs47ln" path="res://art/characters/player.png" id="2_mctgn"]
 [ext_resource type="Texture2D" uid="uid://ct3n30kvfiud5" path="res://others/@Bar.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bukbha2cposgc" path="res://others/pic.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://belrn7x3qdt25" path="res://others/ChatGPT Image Apr 15, 2025, 11_35_40 PM.png" id="5_fjrip"]
-[ext_resource type="FontFile" uid="uid://c5h1fe07ymuyx" path="res://others/superstarorig_memesbruh03.ttf" id="5_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://cuj0ij4we3vh" path="res://art/sprites/particles/dust_particles_01.png" id="7_fjrip"]
 [ext_resource type="Texture2D" uid="uid://c0avrmslmgv6t" path="res://others/Dummy.png" id="7_smehm"]
 [ext_resource type="FontFile" uid="uid://clmr0r2ohpx88" path="res://others/superstar_memesbruh03.ttf" id="8_ur7pv"]
@@ -754,11 +753,12 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("5_tuyoq")
+theme_override_fonts/font = ExtResource("8_ur7pv")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_fjrip")
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
 offset_left = 94.0
@@ -789,11 +789,12 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("5_tuyoq")
+theme_override_fonts/font = ExtResource("8_ur7pv")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_fjrip")
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Dummy" type="TextureRect" parent="CanvasLayer"]
 offset_left = 5.0

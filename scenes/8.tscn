@@ -778,7 +778,7 @@ volume_db = 19.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("16_dlqfd")]
-position = Vector2(5, 322)
+position = Vector2(13, 316)
 collision_layer = 7
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

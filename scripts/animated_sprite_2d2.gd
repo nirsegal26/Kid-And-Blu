@@ -1,10 +1,10 @@
 extends AnimatedSprite2D
 
-@onready var margin = Vector2(170, 600) # מרחק מהפינה
+@onready var margin = Vector2(170, 540) 
 
 func _ready():
 	update_position()
-	get_viewport().size_changed.connect(update_position) # ← שינוי חשוב כאן!
+	get_viewport().size_changed.connect(update_position) 
 
 func update_position():
 	var screen_size = get_viewport_rect().size

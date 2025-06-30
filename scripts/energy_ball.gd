@@ -13,7 +13,7 @@ var sound_timer := Timer.new()
 var target: Node2D = null
 var is_dying := false
 var can_attack := true
-var last_direction := Vector2.ZERO  # כיוון תנועה אחרון
+var last_direction := Vector2.ZERO 
 
 func _ready():
 	target = Global.player
@@ -28,20 +28,17 @@ func _physics_process(delta):
 		return
 
 	var dir = (target.global_position - global_position).normalized()
-	last_direction = dir  # עדכון כיוון אחרון
+	last_direction = dir 
 	var distance = global_position.distance_to(target.global_position)
 
-	# תזוזה לעבר השחקן רק אם לא קרוב מדי
 	if distance > min_distance:
 		position += dir * speed * delta
 
-	# תקיפה רק אם בטווח וניתן
 	if distance <= attack_range and can_attack:
 		perform_attack(dir)
 	elif distance > attack_range:
 		update_fly_animation(dir)
 
-	# זיהוי התקפה מהשחקן (גם בלי body_entered)
 	if target.has_method("is_attacking") and target.is_attacking():
 		if distance <= attack_range + 5.0:
 			die()
@@ -96,7 +93,6 @@ func die():
 	can_attack = false
 	collision_shape.set_deferred("disabled", true)
 
-	# אנימציית מוות לפי כיוון אחרון
 	if last_direction.y < -0.5:
 		animated_sprite.play("die_up")
 	elif last_direction.y > 0.5:

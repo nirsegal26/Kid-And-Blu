@@ -341,7 +341,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ro1pn")
 text = "back"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(1078.38, 83.25)
+position = Vector2(1078.38, 37.25)
 scale = Vector2(5.90104, 5.84375)
 sprite_frames = SubResource("SpriteFrames_ol3ts")
 autoplay = "default"
@@ -349,7 +349,7 @@ frame_progress = 0.044091
 script = ExtResource("5_0cn6s")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(964.688, 51.0804)
+position = Vector2(964.688, 5.0804)
 scale = Vector2(5.98437, 6.18391)
 sprite_frames = SubResource("SpriteFrames_8oj1i")
 autoplay = "default"
@@ -359,7 +359,7 @@ offset = Vector2(-4, 5)
 script = ExtResource("5_rwqh0")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(1673, 692)
+position = Vector2(1673, 626)
 scale = Vector2(2.90625, 2.54167)
 sprite_frames = SubResource("SpriteFrames_aj3ol")
 autoplay = "default"
@@ -367,7 +367,7 @@ frame_progress = 0.60545
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 y_sort_enabled = true
-position = Vector2(1094.69, 382.063)
+position = Vector2(1094.69, 336.063)
 scale = Vector2(6.22135, 5.87762)
 sprite_frames = SubResource("SpriteFrames_uw68a")
 animation = &"SideRun"
@@ -377,7 +377,7 @@ script = ExtResource("9_yq5h1")
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer"]
 y_sort_enabled = true
-position = Vector2(1746.75, 851.375)
+position = Vector2(1746.75, 773.375)
 scale = Vector2(7.40624, 7.32812)
 sprite_frames = SubResource("SpriteFrames_ry6gc")
 autoplay = "default"

@@ -979,7 +979,7 @@ region_rect = Rect2(0, 0, 51.0065, 57.58)
 
 [node name="Player" parent="." instance=ExtResource("12_7o1e6")]
 top_level = true
-position = Vector2(32, 590)
+position = Vector2(832, 158)
 
 [node name="Blu" parent="." instance=ExtResource("13_7ji8q")]
 top_level = true

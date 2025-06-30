@@ -1,6 +1,5 @@
 extends Node2D
 var hero = false
-# קרב ומצלמה
 var in_talking_area := false
 var minotaurs := []
 var camera_move := true
@@ -120,7 +119,6 @@ func show_next_line():
 		blu_label.hide()
 		kid_label.hide()
 
-		# הפעלת Blu מחדש
 		var blu = $Blu
 		blu.set_physics_process(true)
 		blu.get_node("AnimatedSprite2D").play("Idle") 

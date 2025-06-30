@@ -6,7 +6,7 @@ var enemy_move := true
 var princes := []
 var enemy_move2 := true
 var scene_to_load := "res://scenes/10.tscn"
-
+var ghost_shader := preload("res://scenes/6.gdshader")
 func _ready() -> void:
 	skeletons = [
 		$Minotaur, $Minotaur2, $Minotaur3, $Minotaur4, $Minotaur5,
