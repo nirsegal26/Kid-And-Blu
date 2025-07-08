@@ -3,7 +3,7 @@ var enemies := []
 var camera_move := true
 @onready var camera_target_position := Vector2(546, 215)
 @onready var wait_duration := 3.0
-@onready var player := get_tree().current_scene.get_node_or_null("Player")
+@onready var player := get_node_or_null("Player")
 var enemy_move := true
 var scene_to_load := "res://scenes/win.tscn"
 func _ready() -> void:

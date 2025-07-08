@@ -52,7 +52,7 @@ func _get_stream(path: String) -> AudioStream:
 func _check_scene_start(scene_name: String):
 	print("Scene switched to:", scene_name)
 
-	if scene_name == "10":
+	if scene_name == "10" or scene_name == "12":
 		delay_active = false
 		var stream = _get_stream("res://music/final battle final.mp3")
 		_switch_stream(stream)

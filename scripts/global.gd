@@ -11,7 +11,7 @@ var player_exit_cliffside_posy = 167.0
 var player_start_posx = 329.0
 var player_start_posy = 131.0
 var game_first_loadin = true
-var player_health: int = 10000
+var player_health: int = 100
 var player_level = 1
 var player_damage = 34
 var xp = 0
@@ -20,7 +20,7 @@ var previous_scene: String = ""
 var previous_player_position: Vector2 = Vector2.ZERO
 var player: Node = null
 var player_take_damage = 20
-var max_health = 10000
+var max_health = 100
 
 func _ready():
 	if not Global.player:

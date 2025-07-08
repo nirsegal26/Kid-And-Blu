@@ -1,14 +1,14 @@
-AudioStreamPlayer
+Label
 AnimationPlayer
+Panel
+AudioStreamPlayer
 AnimatedSprite2D
 CollisionShape2D
 Area2D
 CharacterBody2D
 VBoxContainer
-Label
 ProgressBar
 CanvasLayer
 Node
 Timer
 Sprite2D
-ColorRect

@@ -1,6 +1,6 @@
 extends Node2D
 
-var scene_to_load := "res://scenes/6.tscn"
+var scene_to_load := "res://scenes/11.tscn"
 var ghost_shader := preload("res://scenes/6.gdshader")
 var loaded_scene: PackedScene = null
 

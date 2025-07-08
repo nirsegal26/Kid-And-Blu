@@ -5,7 +5,7 @@ var skeletons := []
 var enemy_move := true
 var princes := []
 var enemy_move2 := true
-var scene_to_load := "res://scenes/10.tscn"
+var scene_to_load := "res://scenes/12.tscn"
 var ghost_shader := preload("res://scenes/6.gdshader")
 func _ready() -> void:
 	skeletons = [
@@ -125,7 +125,7 @@ func change_scenes():
 	if Global.transition_scene:
 		Global.transition_scene = false
 		await get_tree().create_timer(0.1).timeout
-		get_tree().change_scene_to_file("res://scenes/10.tscn")
+		get_tree().change_scene_to_file("res://scenes/12.tscn")
 
 func _on_change_scene_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

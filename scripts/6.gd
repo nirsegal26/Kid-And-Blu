@@ -1,7 +1,7 @@
 extends Node2D
 
 var can_anim = true
-var scene_to_load := "res://scenes/7.tscn"
+var scene_to_load := "res://scenes/13.tscn"
 var loaded_scene: PackedScene = null
 var ghost_shader := preload("res://scenes/7.gdshader")  
 
