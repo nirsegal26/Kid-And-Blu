@@ -9,6 +9,7 @@ Play as Kid, a young ranger, and his mysterious blob companion, Blu, on a danger
 Watch Now on YouTube!
 
 https://youtu.be/z7CwiI9pXpY?si=GEqci20uuSZJ9W95
+
 ---
 
 ## 📷 Screenshots
@@ -69,5 +70,4 @@ https://nirsegal26.itch.io/kidandblu
 LinkedIn Profile
 www.linkedin.com/in/nirsegal26
 
-Itch.io page (coming soon)
 
