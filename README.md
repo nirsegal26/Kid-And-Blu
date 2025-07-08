@@ -6,8 +6,9 @@ Play as Kid, a young ranger, and his mysterious blob companion, Blu, on a danger
 ---
 
 ## 🕹️ Gameplay Trailer
-[▶ Watch the trailer on YouTube](https://youtu.be/z7CwiI9pXpY)
+Watch Now on YouTube!
 
+https://youtu.be/z7CwiI9pXpY?si=GEqci20uuSZJ9W95
 ---
 
 ## 📷 Screenshots
