@@ -62,6 +62,9 @@ For feedback, bug reports or support, contact:
 
 ## 🧷 Links
 
+Play Now on itch.io!
+https://nirsegal26.itch.io/kidandblu
+
 LinkedIn Profile
 www.linkedin.com/in/nirsegal26
 
